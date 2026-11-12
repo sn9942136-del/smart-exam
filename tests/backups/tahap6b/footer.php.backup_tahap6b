@@ -1,0 +1,12 @@
+<footer class="app-footer bg-white border-top border-slate-200 py-3 px-3 px-lg-4 mt-auto">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 fs-xs text-muted">
+        <div>
+            <span>&copy; <?= date('Y') ?> <strong><?= app_name() ?></strong> &bull; Platform Evaluasi Akademik Digital</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <span class="badge rounded-pill bg-light text-secondary border border-slate-200 px-2.5 py-1 fw-medium">PHP <?= PHP_VERSION ?></span>
+            <span class="badge rounded-pill bg-light text-primary border border-slate-200 px-2.5 py-1 fw-medium"><i class="bi bi-robot me-1"></i>AI Proctoring v1.0</span>
+            <span class="badge rounded-pill bg-light text-success border border-slate-200 px-2.5 py-1 fw-medium"><i class="bi bi-shield-check me-1"></i>RBAC Secured</span>
+        </div>
+    </div>
+</footer>

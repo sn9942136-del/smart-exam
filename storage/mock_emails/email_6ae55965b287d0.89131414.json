@@ -1,0 +1,19 @@
+{
+    "from": "<noreply@smartexam.local>",
+    "to": [
+        "<budi.santoso@sekolah.sch.id>"
+    ],
+    "headers": {
+        "From": "Smart Exam <noreply@smartexam.local>",
+        "To": "<budi.santoso@sekolah.sch.id>",
+        "Subject": "Jadwal Ujian Matematika",
+        "X-SmartExam-Log-Id": "1358",
+        "Message-ID": "<smart-exam-1358-4e09ad54@127.0.0.1>",
+        "Date": "Sat, 31 Oct 2026 09:58:45 +0700",
+        "Content-Type": "text\/plain; charset=UTF-8"
+    },
+    "subject": "Jadwal Ujian Matematika",
+    "body": "Konten notifikasi ujian\r\n\r\n.",
+    "raw_message": "From: Smart Exam <noreply@smartexam.local>\r\nTo: <budi.santoso@sekolah.sch.id>\r\nSubject: Jadwal Ujian Matematika\r\nX-SmartExam-Log-Id: 1358\r\nMessage-ID: <smart-exam-1358-4e09ad54@127.0.0.1>\r\nDate: Sat, 31 Oct 2026 09:58:45 +0700\r\nContent-Type: text\/plain; charset=UTF-8\r\n\r\nKonten notifikasi ujian\r\n\r\n.\r\n",
+    "captured_at": "2026-10-31 03:58:45"
+}

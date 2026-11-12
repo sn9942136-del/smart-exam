@@ -1,0 +1,324 @@
+<!-- Breadcrumb Navigation -->
+<?php include __DIR__ . '/../components/breadcrumb.php'; ?>
+
+<!-- Header Greeting & System Status -->
+<div class="card border-0 shadow-sm rounded-4 text-white p-3.5 p-lg-4 mb-4 position-relative overflow-hidden" style="background: var(--gradient-admin);">
+    <!-- Subtle ambient glow background decoration -->
+    <div class="position-absolute end-0 top-0 bottom-0 w-50 pointer-events-none opacity-10" style="background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.45) 0%, transparent 60%);"></div>
+
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative z-1">
+        <div class="d-flex align-items-center gap-3">
+            <div class="rounded-3 bg-white text-primary p-2.5 d-flex align-items-center justify-content-center shadow-xs flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-shield-lock-fill fs-4 text-primary"></i>
+            </div>
+            <div>
+                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                    <h4 class="fw-bold mb-0 text-white tracking-tight"><?= e($user['name'] ?? 'Administrator') ?></h4>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill fs-3xs px-2.5 py-0.5 fw-semibold"><?= role_label() ?></span>
+                </div>
+                <div class="text-white-75 fs-xs d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                    <span class="d-inline-flex align-items-center gap-1.5">
+                        <i class="bi bi-envelope text-white-50"></i> <?= e($user['email'] ?? '') ?>
+                    </span>
+                    <span class="text-white-50 d-none d-sm-inline">&bull;</span>
+                    <span class="d-inline-flex align-items-center gap-1.5">
+                        <i class="bi bi-calendar-check text-white-50"></i> T.A. <?= e($stats['active_year']) ?> (Semester <?= e($stats['active_semester']) ?>)
+                    </span>
+                    <span class="text-white-50 d-none d-sm-inline">&bull;</span>
+                    <span class="d-inline-flex align-items-center gap-1.5">
+                        <i class="bi bi-shield-check text-success"></i> Pusat Kontrol Ujian
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="<?= base_url('admin/ai-configuration') ?>" class="btn btn-sm btn-light text-primary rounded-pill px-3.5 py-1.5 fw-semibold shadow-xs d-inline-flex align-items-center gap-1.5">
+                <i class="bi bi-cpu"></i>
+                <span>Konfigurasi AI</span>
+            </a>
+            <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3.5 py-1.5 fw-medium d-inline-flex align-items-center gap-1.5" onclick="App.openCameraDiagnostic()">
+                <i class="bi bi-camera-video"></i>
+                <span>Diagnostik Kamera</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Statistics Row -->
+<div class="row g-3 mb-4">
+    <!-- Stat 1: Total Pengguna -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">Total Pengguna</span>
+                <div class="rounded-3 bg-primary-subtle text-primary p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-slate-900 mb-1.5 fs-3 tracking-tight"><?= $stats['total_users'] ?? 0 ?></h3>
+            <div class="fs-2xs text-muted d-flex flex-wrap gap-2 align-items-center">
+                <span class="d-inline-flex align-items-center gap-1"><i class="bi bi-person-badge text-primary"></i> <?= $stats['total_teachers'] ?? 0 ?> Guru</span>
+                <span class="text-slate-300">&bull;</span>
+                <span class="d-inline-flex align-items-center gap-1"><i class="bi bi-mortarboard text-success"></i> <?= $stats['total_students'] ?? 0 ?> Siswa</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 2: Kelas & Mapel -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">Kelas &amp; Mapel</span>
+                <div class="rounded-3 bg-info-subtle text-info p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-buildings-fill"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-slate-900 mb-1.5 fs-3 tracking-tight">
+                <?= $stats['total_classes'] ?? 0 ?> <span class="fs-xs fw-normal text-muted">Kelas</span>
+            </h3>
+            <div class="fs-2xs text-muted d-flex align-items-center gap-1">
+                <i class="bi bi-book text-info"></i>
+                <span><?= $stats['total_subjects'] ?? 0 ?> Mata Pelajaran</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 3: Bank Soal & Ujian -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">Bank Soal &amp; Ujian</span>
+                <div class="rounded-3 bg-success-subtle text-success p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-journal-check"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-slate-900 mb-1.5 fs-3 tracking-tight">
+                <?= $stats['total_qbanks'] ?? 0 ?> <span class="fs-xs fw-normal text-muted">Bank</span>
+            </h3>
+            <div class="fs-2xs text-muted d-flex align-items-center gap-1">
+                <i class="bi bi-calendar2-check text-success"></i>
+                <span><?= $stats['total_exams'] ?? 0 ?> Jadwal Ujian</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 4: AI Proctoring Status -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">AI Proctoring</span>
+                <div class="rounded-3 bg-warning-subtle text-warning-emphasis p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-robot"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-success mb-1.5 fs-3 tracking-tight d-flex align-items-center gap-1.5">
+                <span>Aktif</span>
+                <span class="fs-xs fw-normal text-muted">(Online)</span>
+            </h3>
+            <div class="fs-2xs text-muted d-flex align-items-center gap-1.5">
+                <span class="badge-dot pulse-success"></span>
+                <span>Dual Camera Vision Engine</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Center Modules Grid -->
+<div class="row g-3 mb-4">
+    <!-- Left: Master Modules -->
+    <div class="col-lg-8">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 p-lg-4 bg-white h-100">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-slate-100">
+                <h6 class="fw-bold text-slate-900 mb-0 d-flex align-items-center gap-2">
+                    <i class="bi bi-grid-fill text-primary"></i>
+                    <span>Pusat Manajemen &amp; Modul Master</span>
+                </h6>
+                <span class="badge bg-slate-100 text-slate-700 border border-slate-200 rounded-pill fs-3xs px-2.5 py-1">
+                    Master Data Ready
+                </span>
+            </div>
+
+            <div class="row g-3">
+                <!-- Pengguna -->
+                <div class="col-md-6">
+                    <div class="p-3 rounded-3 border border-slate-200 bg-slate-50 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-2 mb-1.5">
+                                <div class="rounded-2 bg-primary-subtle text-primary p-1 d-flex align-items-center justify-content-center" style="width: 26px; height: 26px;">
+                                    <i class="bi bi-people-fill fs-xs"></i>
+                                </div>
+                                <h6 class="fw-semibold text-slate-900 mb-0 fs-xs">Manajemen Pengguna</h6>
+                            </div>
+                            <p class="fs-2xs text-muted mb-3 leading-relaxed">Kelola akun Admin, Guru, dan Siswa, reset kata sandi, serta status aktivasi.</p>
+                        </div>
+                        <a href="<?= base_url('admin/users') ?>" class="btn btn-xs btn-outline-primary rounded-pill px-3 align-self-start fw-medium">
+                            Kelola Pengguna &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Role & Permissions -->
+                <div class="col-md-6">
+                    <div class="p-3 rounded-3 border border-slate-200 bg-slate-50 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-2 mb-1.5">
+                                <div class="rounded-2 bg-info-subtle text-info p-1 d-flex align-items-center justify-content-center" style="width: 26px; height: 26px;">
+                                    <i class="bi bi-shield-check fs-xs"></i>
+                                </div>
+                                <h6 class="fw-semibold text-slate-900 mb-0 fs-xs">Role &amp; Hak Akses (RBAC)</h6>
+                            </div>
+                            <p class="fs-2xs text-muted mb-3 leading-relaxed">Atur matriks kewenangan, hak akses, dan permission setiap peran pengguna.</p>
+                        </div>
+                        <a href="<?= base_url('admin/roles') ?>" class="btn btn-xs btn-outline-info rounded-pill px-3 align-self-start fw-medium">
+                            Kelola Role &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tahun & Semester -->
+                <div class="col-md-6">
+                    <div class="p-3 rounded-3 border border-slate-200 bg-slate-50 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-2 mb-1.5">
+                                <div class="rounded-2 bg-success-subtle text-success p-1 d-flex align-items-center justify-content-center" style="width: 26px; height: 26px;">
+                                    <i class="bi bi-calendar3 fs-xs"></i>
+                                </div>
+                                <h6 class="fw-semibold text-slate-900 mb-0 fs-xs">Tahun Ajaran &amp; Semester</h6>
+                            </div>
+                            <p class="fs-2xs text-muted mb-3 leading-relaxed">Atur periode kalender akademik dan tentukan semester yang aktif.</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="<?= base_url('admin/academic-years') ?>" class="btn btn-xs btn-outline-success rounded-pill px-2.5 fw-medium">Tahun Ajaran</a>
+                            <a href="<?= base_url('admin/semesters') ?>" class="btn btn-xs btn-outline-success rounded-pill px-2.5 fw-medium">Semester</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kelas & Mapel -->
+                <div class="col-md-6">
+                    <div class="p-3 rounded-3 border border-slate-200 bg-slate-50 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex align-items-center gap-2 mb-1.5">
+                                <div class="rounded-2 bg-warning-subtle text-warning-emphasis p-1 d-flex align-items-center justify-content-center" style="width: 26px; height: 26px;">
+                                    <i class="bi bi-buildings fs-xs"></i>
+                                </div>
+                                <h6 class="fw-semibold text-slate-900 mb-0 fs-xs">Kelas &amp; Mata Pelajaran</h6>
+                            </div>
+                            <p class="fs-2xs text-muted mb-3 leading-relaxed">Struktur rombongan belajar siswa, wali kelas, dan master kurikulum.</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="<?= base_url('admin/classes') ?>" class="btn btn-xs btn-outline-secondary rounded-pill px-2.5 fw-medium">Kelas</a>
+                            <a href="<?= base_url('admin/subjects') ?>" class="btn btn-xs btn-outline-secondary rounded-pill px-2.5 fw-medium">Mapel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: AI Config & Quick Info -->
+    <div class="col-lg-4">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 p-lg-4 bg-white h-100 d-flex flex-column justify-content-between">
+            <div>
+                <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-slate-100">
+                    <h6 class="fw-bold text-slate-900 mb-0 d-flex align-items-center gap-2">
+                        <i class="bi bi-cpu-fill text-primary"></i>
+                        <span>Parameter AI Proctoring</span>
+                    </h6>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill fs-3xs">Vision</span>
+                </div>
+
+                <div class="p-2.5 rounded-3 bg-slate-50 border border-slate-200 mb-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted fs-3xs">Sensitivitas Gaze Tracking</span>
+                        <span class="badge bg-white text-primary border border-slate-200 fs-3xs font-monospace">0.75</span>
+                    </div>
+                    <small class="text-slate-700 fw-semibold fs-xs d-block mt-0.5">Toleransi Standar</small>
+                </div>
+
+                <div class="p-2.5 rounded-3 bg-slate-50 border border-slate-200 mb-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted fs-3xs">Batas Wajah Hilang</span>
+                        <span class="badge bg-white text-danger border border-slate-200 fs-3xs font-monospace">5s</span>
+                    </div>
+                    <small class="text-slate-700 fw-semibold fs-xs d-block mt-0.5">Maksimal 5 Detik</small>
+                </div>
+
+                <div class="p-2.5 rounded-3 bg-slate-50 border border-slate-200 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="text-muted fs-3xs">Interval Dual Cam Sync</span>
+                        <span class="badge bg-white text-success border border-slate-200 fs-3xs font-monospace">1000ms</span>
+                    </div>
+                    <small class="text-slate-700 fw-semibold fs-xs d-block mt-0.5">Real-Time WebRTC Sync</small>
+                </div>
+            </div>
+
+            <a href="<?= base_url('admin/ai-configuration') ?>" class="btn btn-primary btn-sm w-100 py-2.5 rounded-3 fw-semibold fs-xs shadow-xs d-flex align-items-center justify-content-center gap-1.5">
+                <i class="bi bi-sliders"></i>
+                <span>Sesuaikan Parameter AI</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recent System Audit Logs Table -->
+<div class="card border border-slate-200 shadow-3xs rounded-4 bg-white overflow-hidden mb-4">
+    <div class="card-header bg-white py-3 px-4 border-bottom border-slate-100 d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <h6 class="fw-bold text-slate-900 mb-0 d-flex align-items-center gap-2">
+            <i class="bi bi-journal-text text-primary"></i>
+            <span>Jejak Audit Aktivitas Sistem Terkini</span>
+        </h6>
+        <span class="badge bg-slate-100 text-slate-700 border border-slate-200 rounded-pill fs-3xs px-2.5 py-1">
+            Audit Trails
+        </span>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="bg-slate-50 text-slate-600 fs-3xs text-uppercase fw-semibold border-bottom border-slate-100">
+                <tr>
+                    <th class="py-2.5 px-3 text-center" style="width: 50px;">#</th>
+                    <th class="py-2.5 px-3">Aksi</th>
+                    <th class="py-2.5 px-3">Modul</th>
+                    <th class="py-2.5 px-3">Pengguna</th>
+                    <th class="py-2.5 px-3">IP Address</th>
+                    <th class="py-2.5 px-3 text-end">Waktu</th>
+                </tr>
+            </thead>
+            <tbody class="fs-xs text-slate-800">
+                <?php if (empty($recentAuditLogs)): ?>
+                    <tr>
+                        <td colspan="6" class="text-center py-4 text-muted">
+                            <i class="bi bi-journal-x fs-3 text-muted d-block mb-1"></i>
+                            <span>Belum ada catatan aktivitas audit sistem.</span>
+                        </td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($recentAuditLogs as $idx => $log): ?>
+                        <tr>
+                            <td class="px-3 text-center text-muted fs-3xs"><?= $idx + 1 ?></td>
+                            <td class="px-3">
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill fs-3xs px-2 py-0.5 font-monospace">
+                                    <?= e($log['action']) ?>
+                                </span>
+                            </td>
+                            <td class="px-3">
+                                <span class="badge bg-slate-100 text-slate-700 border border-slate-200 rounded-pill fs-3xs px-2 py-0.5">
+                                    <?= e($log['module']) ?>
+                                </span>
+                            </td>
+                            <td class="px-3">
+                                <span class="fw-semibold text-slate-900 d-block"><?= e($log['user_name'] ?? 'Sistem') ?></span>
+                                <small class="text-muted fs-3xs"><?= e($log['user_email'] ?? '-') ?></small>
+                            </td>
+                            <td class="px-3 font-monospace text-slate-600 fs-3xs"><?= e($log['ip_address'] ?? '127.0.0.1') ?></td>
+                            <td class="px-3 text-end text-muted fs-3xs">
+                                <i class="bi bi-clock me-1 text-slate-400"></i>
+                                <?= date('d M Y, H:i', strtotime($log['created_at'])) ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>

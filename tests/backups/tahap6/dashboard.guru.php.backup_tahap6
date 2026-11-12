@@ -1,0 +1,251 @@
+<!-- Breadcrumb Navigation -->
+<?php include __DIR__ . '/../components/breadcrumb.php'; ?>
+
+<!-- Header Greeting & Quick Actions -->
+<div class="card border-0 shadow-xs rounded-4 text-white p-3.5 p-lg-4 mb-4 position-relative overflow-hidden" style="background: var(--gradient-guru);">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative z-1">
+        <div class="d-flex align-items-center gap-3">
+            <div class="rounded-3 bg-white text-primary p-2.5 d-flex align-items-center justify-content-center shadow-xs flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-person-workspace fs-4 text-primary"></i>
+            </div>
+            <div>
+                <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                    <h4 class="fw-bold mb-0 text-white tracking-tight"><?= e($user['name'] ?? 'Bpk/Ibu Guru') ?></h4>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill fs-3xs px-2.5 py-0.5 fw-semibold"><?= role_label() ?></span>
+                </div>
+                <div class="text-white-75 fs-xs d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                    <span class="d-inline-flex align-items-center gap-1.5">
+                        <i class="bi bi-envelope text-white-50"></i> <?= e($user['email'] ?? '') ?>
+                    </span>
+                    <span class="text-white-50 d-none d-sm-inline">&bull;</span>
+                    <span class="d-inline-flex align-items-center gap-1.5">
+                        <i class="bi bi-card-text text-white-50"></i> NIP: <?= e($user['nip_nisn'] ?? '-') ?>
+                    </span>
+                    <span class="text-white-50 d-none d-sm-inline">&bull;</span>
+                    <span class="d-inline-flex align-items-center gap-1.5">
+                        <i class="bi bi-mortarboard text-white-50"></i> Pengampu Mata Pelajaran
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="<?= base_url('guru/question-banks/create') ?>" class="btn btn-sm btn-light text-primary rounded-pill px-3.5 py-1.5 fw-semibold shadow-xs d-inline-flex align-items-center gap-2">
+                <i class="bi bi-plus-circle"></i>
+                <span>Buat Bank Soal</span>
+            </a>
+            <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3.5 py-1.5 fw-medium d-inline-flex align-items-center gap-2" onclick="App.openCameraDiagnostic()">
+                <i class="bi bi-camera-video"></i>
+                <span>Uji Dual Cam</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Statistics Row -->
+<div class="row g-3 mb-4">
+    <!-- Stat 1: Bank Soal -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">Bank Soal Saya</span>
+                <div class="rounded-3 bg-primary-subtle text-primary p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-collection-fill"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-slate-900 mb-1.5 fs-3 tracking-tight"><?= $stats['question_banks'] ?? 0 ?></h3>
+            <div class="fs-2xs text-muted d-flex align-items-center gap-1.5">
+                <i class="bi bi-check2-circle text-primary"></i>
+                <span><?= $stats['total_items'] ?? 0 ?> Butir Soal Terdata</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 2: Jadwal Ujian Aktif -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">Jadwal Ujian Aktif</span>
+                <div class="rounded-3 bg-info-subtle text-info p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-calendar-check-fill"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-slate-900 mb-1.5 fs-3 tracking-tight"><?= $stats['upcoming_exams'] ?? 0 ?></h3>
+            <div class="fs-2xs text-muted d-flex align-items-center gap-1.5">
+                <i class="bi bi-clock text-info"></i>
+                <span>Semester Ganjil 2026/2027</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 3: Koreksi Esai -->
+    <div class="col-6 col-xl-3">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all">
+            <div class="d-flex justify-content-between align-items-start mb-2.5">
+                <span class="fs-xs text-slate-600 fw-semibold">Koreksi Soal Esai</span>
+                <div class="rounded-3 bg-success-subtle text-success p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                    <i class="bi bi-clipboard-check-fill"></i>
+                </div>
+            </div>
+            <h3 class="fw-bold text-slate-900 mb-1.5 fs-3 tracking-tight"><?= $stats['graded_essays'] ?? 0 ?></h3>
+            <div class="fs-2xs text-muted d-flex align-items-center gap-1.5">
+                <i class="bi bi-hourglass-split text-warning"></i>
+                <span>Sisa: <?= $stats['pending_essays'] ?? 0 ?> Belum Dinilai</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 4: Ruang Live -->
+    <div class="col-6 col-xl-3">
+        <a href="<?= base_url('guru/exams/monitoring') ?>" class="text-decoration-none d-block h-100">
+            <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 bg-white h-100 transition-all hover-bg-light">
+                <div class="d-flex justify-content-between align-items-start mb-2.5">
+                    <span class="fs-xs text-slate-600 fw-semibold">Pengawasan Live</span>
+                    <div class="rounded-3 bg-danger-subtle text-danger p-2 fs-6 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                        <i class="bi bi-broadcast"></i>
+                    </div>
+                </div>
+                <h3 class="fw-bold text-danger mb-1.5 fs-3 tracking-tight d-flex align-items-center gap-2">
+                    <span><?= $stats['active_rooms'] ?? 0 ?></span>
+                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill fs-3xs px-2 py-0.5 fw-semibold">Live Room</span>
+                </h3>
+                <div class="fs-2xs text-muted d-flex align-items-center gap-1.5">
+                    <span class="badge-dot pulse-danger"></span>
+                    <span>Buka Ruang Monitoring &rarr;</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Center Features & Recent Question Banks Grid -->
+<div class="row g-3 mb-4">
+    <!-- Left Column: Recent Question Banks -->
+    <div class="col-lg-8">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 p-lg-4 bg-white h-100">
+            <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-slate-100">
+                <h6 class="fw-bold text-slate-900 mb-0 d-flex align-items-center gap-2">
+                    <i class="bi bi-collection text-primary"></i>
+                    <span>Bank Soal Terbaru</span>
+                </h6>
+                <a href="<?= base_url('guru/question-banks') ?>" class="btn btn-xs btn-outline-primary rounded-pill px-3 d-inline-flex align-items-center gap-1.5 fw-medium">
+                    <span>Lihat Semua</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <?php if (empty($recentBanks)): ?>
+                <div class="text-center py-4 bg-slate-50 rounded-4 border border-dashed border-slate-200">
+                    <i class="bi bi-journal-x fs-2 text-muted mb-2 d-block"></i>
+                    <h6 class="fw-semibold text-slate-900 mb-1 fs-sm">Belum Ada Bank Soal</h6>
+                    <p class="fs-xs text-muted mb-3">Mulai buat bank soal untuk mata pelajaran yang Anda ampu.</p>
+                    <a href="<?= base_url('guru/question-banks/create') ?>" class="btn btn-sm btn-primary rounded-pill px-3.5 py-1.5 shadow-xs d-inline-flex align-items-center gap-2 fw-medium">
+                        <i class="bi bi-plus-lg"></i>
+                        <span>Buat Bank Soal Sekarang</span>
+                    </a>
+                </div>
+            <?php else: ?>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-slate-50 text-slate-600 fs-3xs text-uppercase fw-semibold border-bottom border-slate-100">
+                            <tr>
+                                <th class="py-2.5 px-3">Kode &amp; Judul</th>
+                                <th class="py-2.5 px-3">Mata Pelajaran</th>
+                                <th class="py-2.5 px-3">Jumlah Soal</th>
+                                <th class="py-2.5 px-3">Status</th>
+                                <th class="py-2.5 px-3 text-end">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fs-xs text-slate-800">
+                            <?php foreach ($recentBanks as $bank): ?>
+                                <tr>
+                                    <td class="px-3">
+                                        <div class="fw-semibold text-slate-900"><?= e($bank['title']) ?></div>
+                                        <span class="badge bg-slate-100 text-slate-700 border border-slate-200 font-monospace rounded-pill fs-3xs"><?= e($bank['code']) ?></span>
+                                    </td>
+                                    <td class="px-3">
+                                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill fs-3xs">
+                                            <?= e($bank['subject_name'] ?? '-') ?>
+                                        </span>
+                                    </td>
+                                    <td class="px-3">
+                                        <span class="fw-semibold text-slate-900"><?= (int)$bank['total_questions'] ?></span> butir
+                                    </td>
+                                    <td class="px-3">
+                                        <?php if ($bank['status'] === 'active'): ?>
+                                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fs-3xs">Aktif</span>
+                                        <?php elseif ($bank['status'] === 'draft'): ?>
+                                            <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill fs-3xs">Draft</span>
+                                        <?php else: ?>
+                                            <span class="badge bg-slate-100 text-slate-700 border border-slate-200 rounded-pill fs-3xs">Arsip</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td class="px-3 text-end">
+                                        <a href="<?= base_url('guru/question-banks/show/' . $bank['id']) ?>" class="btn btn-xs btn-outline-primary rounded-pill px-2.5 py-1 d-inline-flex align-items-center gap-1 fw-medium">
+                                            <span>Kelola Soal</span>
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+
+    <!-- Right Column: Shortcuts & Quick Tools -->
+    <div class="col-lg-4">
+        <div class="card border border-slate-200 shadow-3xs rounded-4 p-3.5 p-lg-4 bg-white h-100">
+            <h6 class="fw-bold text-slate-900 mb-3 pb-2 border-bottom border-slate-100 d-flex align-items-center gap-2">
+                <i class="bi bi-lightning-charge text-primary"></i>
+                <span>Aksi Cepat Pengajar</span>
+            </h6>
+            <div class="d-flex flex-column gap-2.5">
+                <!-- 1. Buat Bank Soal -->
+                <a href="<?= base_url('guru/question-banks/create') ?>" class="quick-action-card p-3 rounded-3 border border-slate-200 bg-slate-50 text-decoration-none d-flex align-items-start gap-3 transition hover-bg-light">
+                    <div class="rounded-3 bg-primary-subtle text-primary p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 38px; height: 38px;">
+                        <i class="bi bi-plus-square fs-5"></i>
+                    </div>
+                    <div class="min-w-0 flex-grow-1 overflow-wrap-anywhere">
+                        <div class="fw-semibold text-slate-900 fs-xs mb-1 lh-sm">Buat Bank Soal Baru</div>
+                        <div class="fs-3xs text-muted lh-base">Input butir soal dan kunci jawaban</div>
+                    </div>
+                </a>
+
+                <!-- 2. Unduh Template Soal -->
+                <a href="<?= base_url('guru/question-banks/template') ?>" class="quick-action-card p-3 rounded-3 border border-slate-200 bg-slate-50 text-decoration-none d-flex align-items-start gap-3 transition hover-bg-light">
+                    <div class="rounded-3 bg-success-subtle text-success p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 38px; height: 38px;">
+                        <i class="bi bi-file-earmark-excel fs-5"></i>
+                    </div>
+                    <div class="min-w-0 flex-grow-1 overflow-wrap-anywhere">
+                        <div class="fw-semibold text-slate-900 fs-xs mb-1 lh-sm">Unduh Template Soal (.csv)</div>
+                        <div class="fs-3xs text-muted lh-base">Format standar impor soal Excel &amp; CSV</div>
+                    </div>
+                </a>
+
+                <!-- 3. Kalibrasi Dual Kamera -->
+                <button type="button" class="quick-action-card p-3 rounded-3 border border-slate-200 bg-slate-50 text-decoration-none d-flex align-items-start gap-3 text-start transition w-100 hover-bg-light" onclick="App.openCameraDiagnostic()">
+                    <div class="rounded-3 bg-info-subtle text-info p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 38px; height: 38px;">
+                        <i class="bi bi-camera-video fs-5"></i>
+                    </div>
+                    <div class="min-w-0 flex-grow-1 overflow-wrap-anywhere">
+                        <div class="fw-semibold text-slate-900 fs-xs mb-1 lh-sm">Kalibrasi Dual Kamera AI</div>
+                        <div class="fs-3xs text-muted lh-base">Cek webcam pengawas &amp; feed kamera HP</div>
+                    </div>
+                </button>
+
+                <!-- 4. Live Monitoring Ujian -->
+                <a href="<?= base_url('guru/exams/monitoring') ?>" class="quick-action-card p-3 rounded-3 border border-slate-200 bg-slate-50 text-decoration-none d-flex align-items-start gap-3 transition hover-bg-light">
+                    <div class="rounded-3 bg-danger-subtle text-danger p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 38px; height: 38px;">
+                        <i class="bi bi-broadcast fs-5"></i>
+                    </div>
+                    <div class="min-w-0 flex-grow-1 overflow-wrap-anywhere">
+                        <div class="fw-semibold text-slate-900 fs-xs mb-1 lh-sm">Live Monitoring Ujian</div>
+                        <div class="fs-3xs text-muted lh-base">Pantau sesi ujian &amp; telemetri proctoring</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+# ==============================================================================
+# SISTEM UJIAN ONLINE BERBASIS DUAL KAMERA AI - GIT IGNORE CONFIGURATION
+# ==============================================================================
+
+# Environment files & Secrets (CRITICAL)
+.env
+.env.*
+!.env.example
+*.env
+*.env.backup
+*.env.production
+*.env.local
+
+# Composer & Dependencies
+/vendor/
+composer.phar
+
+# Application Storage, Uploads & Logs
+/storage/logs/*.log
+/storage/logs/*.txt
+/storage/recordings/*
+!/storage/recordings/.gitkeep
+/storage/uploads/*
+!/storage/uploads/.gitkeep
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# Scratch, Debug & Temporary Files
+/scratch/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+php_error.log
+error_log
+
+# IDE & Editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

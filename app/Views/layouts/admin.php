@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id" class="h-100" data-bs-theme="<?= theme_mode() ?>" data-theme="<?= theme_mode() ?>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="<?= csrf_token() ?>">
+    <meta name="base-url" content="<?= base_url() ?>">
+    <meta name="user-id" content="<?= (string)(user_id() ?? '') ?>">
+
+    <title><?= isset($pageTitle) ? e($pageTitle) . ' | ' . app_name() : app_name() ?></title>
+
+    <!-- Anti-flicker Instant Theme Script -->
+    <script>
+        (function() {
+            try {
+                var uid = '<?= (string)(user_id() ?? "") ?>';
+                var saved = uid ? localStorage.getItem('smart_exam_theme_' + uid) : localStorage.getItem('smart_exam_theme_global');
+                var serverTheme = '<?= theme_mode() ?>';
+                var theme = serverTheme || saved || 'light';
+                document.documentElement.setAttribute('data-bs-theme', theme);
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch(e) {}
+        })();
+    </script>
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Theme Stylesheet -->
+    <link rel="stylesheet" href="<?= asset('css/main.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/ai-chat.css') ?>">
+</head>
+<body class="admin-layout d-flex h-100" style="background-color: var(--vui-bg-body, #f8fafc);">
+
+    <!-- Sidebar Component -->
+    <?php include __DIR__ . '/../components/sidebar.php'; ?>
+
+    <!-- Main Content Wrapper -->
+    <div class="app-main-wrapper flex-grow-1 d-flex flex-column min-vh-100 overflow-hidden">
+        <!-- Top Navbar Component -->
+        <?php include __DIR__ . '/../components/navbar.php'; ?>
+
+        <!-- Content Area -->
+        <main class="app-content-body flex-grow-1 p-3 p-lg-4 overflow-auto">
+            <!-- Flash Message Alerts -->
+            <?php include __DIR__ . '/../components/alert.php'; ?>
+
+            <!-- Page Body Content -->
+            <?= $content ?>
+        </main>
+
+        <!-- Footer Component -->
+        <?php include __DIR__ . '/../components/footer.php'; ?>
+    </div>
+
+    <!-- Reusable Modals & Spinners -->
+    <?php include __DIR__ . '/../components/modal.php'; ?>
+    <?php include __DIR__ . '/../components/spinner.php'; ?>
+
+    <!-- Global Floating AI Chatbot Assistant -->
+    <?php include __DIR__ . '/../components/floating_chat.php'; ?>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core Application JavaScript -->
+    <script src="<?= asset('js/app.js') ?>"></script>
+    <script src="<?= asset('js/markdown-renderer.js') ?>"></script>
+    <script src="<?= asset('js/ai-chat.js') ?>"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "from": "<noreply@smartexam.local>",
+    "to": [
+        "<superadmin@gmail.com>"
+    ],
+    "headers": {
+        "From": "Smart Exam <noreply@smartexam.local>",
+        "To": "<superadmin@gmail.com>",
+        "Subject": "Notifikasi Multi-Channel",
+        "X-SmartExam-Log-Id": "1361",
+        "Message-ID": "<smart-exam-1361-78570bb7@127.0.0.1>",
+        "Date": "Sat, 31 Oct 2026 09:58:47 +0700",
+        "Content-Type": "text\/plain; charset=UTF-8"
+    },
+    "subject": "Notifikasi Multi-Channel",
+    "body": "Pesan informasi multi-channel sistem ujian.\r\n\r\n.",
+    "raw_message": "From: Smart Exam <noreply@smartexam.local>\r\nTo: <superadmin@gmail.com>\r\nSubject: Notifikasi Multi-Channel\r\nX-SmartExam-Log-Id: 1361\r\nMessage-ID: <smart-exam-1361-78570bb7@127.0.0.1>\r\nDate: Sat, 31 Oct 2026 09:58:47 +0700\r\nContent-Type: text\/plain; charset=UTF-8\r\n\r\nPesan informasi multi-channel sistem ujian.\r\n\r\n.\r\n",
+    "captured_at": "2026-10-31 03:58:47"
+}

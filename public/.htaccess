@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to .env and hidden files
+    RewriteRule ^\..* - [F,L]
+
+    # If the requested filename exists, simply serve it
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rewrite all other URLs to index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Set UTF-8 encoding
+AddDefaultCharset UTF-8

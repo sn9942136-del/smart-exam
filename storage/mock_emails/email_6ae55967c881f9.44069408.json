@@ -1,0 +1,24 @@
+{
+    "from": "<admin@smartexam.test>",
+    "to": [
+        "<guru.penguji@sekolah.sch.id>"
+    ],
+    "headers": {
+        "Date": "Sat, 31 Oct 2026 09:58:47 +0700",
+        "From": "\"Smart Exam\" <admin@smartexam.test>",
+        "Reply-To": "<smart.examm@gmail.com>",
+        "To": "<guru.penguji@sekolah.sch.id>",
+        "Subject": "Ujian Diizinkan",
+        "Message-ID": "<smartexam.1793415527.59761143c652@smartexam.test>",
+        "MIME-Version": "1.0",
+        "Importance": "normal",
+        "X-Priority": "3",
+        "X-Entity-Ref-ID": "<smartexam.1793415527.59761143c652@smartexam.test>",
+        "Feedback-ID": "smartexam:notification:transactional:gmail",
+        "Content-Type": "multipart\/alternative; boundary=\"=_NextPart_473fbb331498e778af5e80d9\""
+    },
+    "subject": "Ujian Diizinkan",
+    "body": "--=_NextPart_473fbb331498e778af5e80d9\r\nContent-Type: text\/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\nSXNp\r\n\r\n--=_NextPart_473fbb331498e778af5e80d9\r\nContent-Type: text\/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\nSXNp\r\n\r\n--=_NextPart_473fbb331498e778af5e80d9--\r\n\r\n.",
+    "raw_message": "Date: Sat, 31 Oct 2026 09:58:47 +0700\r\nFrom: \"Smart Exam\" <admin@smartexam.test>\r\nReply-To: <smart.examm@gmail.com>\r\nTo: <guru.penguji@sekolah.sch.id>\r\nSubject: Ujian Diizinkan\r\nMessage-ID: <smartexam.1793415527.59761143c652@smartexam.test>\r\nMIME-Version: 1.0\r\nImportance: normal\r\nX-Priority: 3\r\nX-Entity-Ref-ID: <smartexam.1793415527.59761143c652@smartexam.test>\r\nFeedback-ID: smartexam:notification:transactional:gmail\r\nContent-Type: multipart\/alternative; boundary=\"=_NextPart_473fbb331498e778af5e80d9\"\r\n\r\n--=_NextPart_473fbb331498e778af5e80d9\r\nContent-Type: text\/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\nSXNp\r\n\r\n--=_NextPart_473fbb331498e778af5e80d9\r\nContent-Type: text\/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\nSXNp\r\n\r\n--=_NextPart_473fbb331498e778af5e80d9--\r\n\r\n.\r\n",
+    "captured_at": "2026-10-31 03:58:47"
+}

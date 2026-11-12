@@ -1,0 +1,434 @@
+{
+    "smart_exam_notif_632": {
+        "status": true,
+        "message_id": "MOCK-WA-5D26086D9EF1",
+        "code": "DELIVERED",
+        "recipient": "081200000001",
+        "client_reference_id": "smart_exam_notif_632",
+        "latency_ms": 12,
+        "timestamp": "2026-10-28 13:41:53"
+    },
+    "smart_exam_notif_998877": {
+        "status": true,
+        "message_id": "MOCK-WA-095224FFB071",
+        "code": "DELIVERED",
+        "recipient": "081200000001",
+        "client_reference_id": "smart_exam_notif_998877",
+        "latency_ms": 20,
+        "timestamp": "2026-10-28 13:42:13"
+    },
+    "smart_exam_eba67273d486": {
+        "status": true,
+        "message_id": "MOCK-WA-ECB4CDF6D239",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_eba67273d486",
+        "latency_ms": 19,
+        "timestamp": "2026-10-29 16:01:07"
+    },
+    "idempotent_test_e283925620eb": {
+        "status": true,
+        "message_id": "MOCK-WA-391F1A50D0D2",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_e283925620eb",
+        "latency_ms": 14,
+        "timestamp": "2026-10-29 16:01:07"
+    },
+    "smart_exam_3ac4cb09b8e8": {
+        "status": true,
+        "message_id": "MOCK-WA-26ED0C46BF99",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_3ac4cb09b8e8",
+        "latency_ms": 13,
+        "timestamp": "2026-10-29 16:08:34"
+    },
+    "idempotent_test_65f55f7a658a": {
+        "status": true,
+        "message_id": "MOCK-WA-7B2B31CA3EC5",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_65f55f7a658a",
+        "latency_ms": 17,
+        "timestamp": "2026-10-29 16:08:35"
+    },
+    "smart_exam_9c1daf6f96c6": {
+        "status": true,
+        "message_id": "MOCK-WA-E2C0E6027BF6",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_9c1daf6f96c6",
+        "latency_ms": 23,
+        "timestamp": "2026-10-29 16:49:07"
+    },
+    "idempotent_test_200409c9b5ea": {
+        "status": true,
+        "message_id": "MOCK-WA-7966E31CB7DD",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_200409c9b5ea",
+        "latency_ms": 10,
+        "timestamp": "2026-10-29 16:49:08"
+    },
+    "smart_exam_8cdb0c936257": {
+        "status": true,
+        "message_id": "MOCK-WA-D245B781F048",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_8cdb0c936257",
+        "latency_ms": 25,
+        "timestamp": "2026-10-29 16:51:39"
+    },
+    "idempotent_test_3851094461c1": {
+        "status": true,
+        "message_id": "MOCK-WA-F3B0DBE3AC53",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_3851094461c1",
+        "latency_ms": 17,
+        "timestamp": "2026-10-29 16:51:40"
+    },
+    "smart_exam_5d00d936bd2d": {
+        "status": true,
+        "message_id": "MOCK-WA-E1B96C2E7538",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_5d00d936bd2d",
+        "latency_ms": 20,
+        "timestamp": "2026-10-29 17:14:30"
+    },
+    "idempotent_test_a2f5fc908187": {
+        "status": true,
+        "message_id": "MOCK-WA-D434F4CFBE98",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_a2f5fc908187",
+        "latency_ms": 16,
+        "timestamp": "2026-10-29 17:14:30"
+    },
+    "smart_exam_4b6b82e1f98b": {
+        "status": true,
+        "message_id": "MOCK-WA-4DC59F24252F",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_4b6b82e1f98b",
+        "latency_ms": 15,
+        "timestamp": "2026-10-29 17:38:23"
+    },
+    "idempotent_test_8d4cea07ef2c": {
+        "status": true,
+        "message_id": "MOCK-WA-AD1CA8C38487",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_8d4cea07ef2c",
+        "latency_ms": 20,
+        "timestamp": "2026-10-29 17:38:23"
+    },
+    "smart_exam_4e89cf054be2": {
+        "status": true,
+        "message_id": "MOCK-WA-E1ACFBE1D188",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_4e89cf054be2",
+        "latency_ms": 11,
+        "timestamp": "2026-10-29 18:05:34"
+    },
+    "idempotent_test_7bb09f3d1483": {
+        "status": true,
+        "message_id": "MOCK-WA-3B8BFAE92DD5",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_7bb09f3d1483",
+        "latency_ms": 12,
+        "timestamp": "2026-10-29 18:05:35"
+    },
+    "smart_exam_20c3fd2bf3b0": {
+        "status": true,
+        "message_id": "MOCK-WA-F00502632388",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_20c3fd2bf3b0",
+        "latency_ms": 20,
+        "timestamp": "2026-10-29 18:24:39"
+    },
+    "idempotent_test_d001a0b13606": {
+        "status": true,
+        "message_id": "MOCK-WA-884A0077386C",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_d001a0b13606",
+        "latency_ms": 15,
+        "timestamp": "2026-10-29 18:24:40"
+    },
+    "smart_exam_f770bceb958a": {
+        "status": true,
+        "message_id": "MOCK-WA-BABA39A6F66F",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_f770bceb958a",
+        "latency_ms": 21,
+        "timestamp": "2026-10-29 18:32:27"
+    },
+    "idempotent_test_fa5277fbd041": {
+        "status": true,
+        "message_id": "MOCK-WA-8F81133D0C1D",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_fa5277fbd041",
+        "latency_ms": 23,
+        "timestamp": "2026-10-29 18:32:28"
+    },
+    "smart_exam_6e058832f6c5": {
+        "status": true,
+        "message_id": "MOCK-WA-D17106FCBBB0",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_6e058832f6c5",
+        "latency_ms": 17,
+        "timestamp": "2026-10-30 07:06:34"
+    },
+    "idempotent_test_948579ac3932": {
+        "status": true,
+        "message_id": "MOCK-WA-073D30DC7092",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_948579ac3932",
+        "latency_ms": 10,
+        "timestamp": "2026-10-30 07:06:35"
+    },
+    "smart_exam_e65b017ccf40": {
+        "status": true,
+        "message_id": "MOCK-WA-BC1051F049AD",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_e65b017ccf40",
+        "latency_ms": 23,
+        "timestamp": "2026-10-30 07:10:09"
+    },
+    "idempotent_test_1154d318c565": {
+        "status": true,
+        "message_id": "MOCK-WA-C4E1167FB2F9",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_1154d318c565",
+        "latency_ms": 12,
+        "timestamp": "2026-10-30 07:10:09"
+    },
+    "smart_exam_10db36d4b654": {
+        "status": true,
+        "message_id": "MOCK-WA-33833F0C88AC",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_10db36d4b654",
+        "latency_ms": 24,
+        "timestamp": "2026-10-30 07:32:20"
+    },
+    "idempotent_test_6ccafb7c2bc9": {
+        "status": true,
+        "message_id": "MOCK-WA-0B9D6549DF0C",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_6ccafb7c2bc9",
+        "latency_ms": 25,
+        "timestamp": "2026-10-30 07:32:21"
+    },
+    "smart_exam_24ffef75a7f4": {
+        "status": true,
+        "message_id": "MOCK-WA-B1E595D52C6C",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_24ffef75a7f4",
+        "latency_ms": 14,
+        "timestamp": "2026-10-30 07:57:05"
+    },
+    "idempotent_test_39ced811e806": {
+        "status": true,
+        "message_id": "MOCK-WA-E42F109E325A",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_39ced811e806",
+        "latency_ms": 20,
+        "timestamp": "2026-10-30 07:57:05"
+    },
+    "smart_exam_9c1dc09f5cab": {
+        "status": true,
+        "message_id": "MOCK-WA-3818B8AB2064",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_9c1dc09f5cab",
+        "latency_ms": 16,
+        "timestamp": "2026-10-30 09:42:19"
+    },
+    "idempotent_test_55169efc1edf": {
+        "status": true,
+        "message_id": "MOCK-WA-A5383A804B6F",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_55169efc1edf",
+        "latency_ms": 15,
+        "timestamp": "2026-10-30 09:42:20"
+    },
+    "smart_exam_2bd4ffc14fe6": {
+        "status": true,
+        "message_id": "MOCK-WA-161BEA04A185",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_2bd4ffc14fe6",
+        "latency_ms": 22,
+        "timestamp": "2026-10-30 09:57:40"
+    },
+    "idempotent_test_75af15c9e354": {
+        "status": true,
+        "message_id": "MOCK-WA-71A8129CC107",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_75af15c9e354",
+        "latency_ms": 17,
+        "timestamp": "2026-10-30 09:57:40"
+    },
+    "smart_exam_3f12460ba419": {
+        "status": true,
+        "message_id": "MOCK-WA-0DFDECDA7567",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_3f12460ba419",
+        "latency_ms": 18,
+        "timestamp": "2026-10-30 14:20:09"
+    },
+    "idempotent_test_d752f117794f": {
+        "status": true,
+        "message_id": "MOCK-WA-3E2B41B9C26D",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_d752f117794f",
+        "latency_ms": 20,
+        "timestamp": "2026-10-30 14:20:09"
+    },
+    "smart_exam_db9a1d310cab": {
+        "status": true,
+        "message_id": "MOCK-WA-50AC1BDEC686",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_db9a1d310cab",
+        "latency_ms": 23,
+        "timestamp": "2026-10-30 15:12:56"
+    },
+    "idempotent_test_dda47cb07531": {
+        "status": true,
+        "message_id": "MOCK-WA-6AEF585F4B4B",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_dda47cb07531",
+        "latency_ms": 14,
+        "timestamp": "2026-10-30 15:12:57"
+    },
+    "smart_exam_27d506464738": {
+        "status": true,
+        "message_id": "MOCK-WA-9C9097C6F44B",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_27d506464738",
+        "latency_ms": 11,
+        "timestamp": "2026-10-30 15:21:14"
+    },
+    "idempotent_test_311ff69fa84b": {
+        "status": true,
+        "message_id": "MOCK-WA-99C1ABE31491",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_311ff69fa84b",
+        "latency_ms": 21,
+        "timestamp": "2026-10-30 15:21:14"
+    },
+    "smart_exam_72fc7f6a533a": {
+        "status": true,
+        "message_id": "MOCK-WA-083990F9E476",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_72fc7f6a533a",
+        "latency_ms": 13,
+        "timestamp": "2026-10-30 15:56:24"
+    },
+    "idempotent_test_35ae150734c1": {
+        "status": true,
+        "message_id": "MOCK-WA-D6973332D691",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_35ae150734c1",
+        "latency_ms": 23,
+        "timestamp": "2026-10-30 15:56:25"
+    },
+    "smart_exam_aa14c57d8ac6": {
+        "status": true,
+        "message_id": "MOCK-WA-D9B8EDEA34E5",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_aa14c57d8ac6",
+        "latency_ms": 18,
+        "timestamp": "2026-10-30 17:04:07"
+    },
+    "idempotent_test_3f7ec1e25ae5": {
+        "status": true,
+        "message_id": "MOCK-WA-38113CB31A3F",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_3f7ec1e25ae5",
+        "latency_ms": 18,
+        "timestamp": "2026-10-30 17:04:08"
+    },
+    "smart_exam_fc3dd65ca360": {
+        "status": true,
+        "message_id": "MOCK-WA-DC278F23896E",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_fc3dd65ca360",
+        "latency_ms": 15,
+        "timestamp": "2026-10-31 03:47:19"
+    },
+    "idempotent_test_37b42d17cb61": {
+        "status": true,
+        "message_id": "MOCK-WA-A8034A1304B7",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_37b42d17cb61",
+        "latency_ms": 20,
+        "timestamp": "2026-10-31 03:47:19"
+    },
+    "smart_exam_5631c08a4525": {
+        "status": true,
+        "message_id": "MOCK-WA-EDF16FD0CAE6",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_5631c08a4525",
+        "latency_ms": 25,
+        "timestamp": "2026-10-31 03:58:37"
+    },
+    "idempotent_test_f8e1b815cb35": {
+        "status": true,
+        "message_id": "MOCK-WA-37F5C148B4F7",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_f8e1b815cb35",
+        "latency_ms": 19,
+        "timestamp": "2026-10-31 03:58:38"
+    },
+    "smart_exam_328c41309959": {
+        "status": true,
+        "message_id": "MOCK-WA-725816C0E9AD",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "smart_exam_328c41309959",
+        "latency_ms": 22,
+        "timestamp": "2026-10-31 04:24:36"
+    },
+    "idempotent_test_d720d34cc324": {
+        "status": true,
+        "message_id": "MOCK-WA-F7BFE7CD7C58",
+        "code": "DELIVERED",
+        "recipient": "6281234567890",
+        "client_reference_id": "idempotent_test_d720d34cc324",
+        "latency_ms": 12,
+        "timestamp": "2026-10-31 04:24:37"
+    }
+}
