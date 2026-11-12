@@ -105,6 +105,19 @@ Aplikasi dibangun dengan mematuhi standar rekayasa perangkat lunak modern:
 
 ---
 
+## 📑 Dokumentasi Lengkap Proyek (OBE Deliverables)
+
+Seluruh berkas dokumentasi rekayasa perangkat lunak telah disusun lengkap pada direktori [`docs/`](docs/):
+
+| Dokumen | Tahapan & Bobot OBE | Tautan Berkas | Deskripsi Isi Dokumen |
+| :--- | :--- | :--- | :--- |
+| **PRD / SRS** | **Tahap 1 (20%)** | [`docs/01_PRD_SRS_Smart_Exam.md`](docs/01_PRD_SRS_Smart_Exam.md) | Analisis kebutuhan fungsional (FR-01 s.d FR-13), Non-Fungsional, persona pengguna, dan matriks ketertelusuran standar IEEE 830. |
+| **SDD & UML** | **Tahap 2 (25%)** | [`docs/02_SDD_Software_Design_Description.md`](docs/02_SDD_Software_Design_Description.md) | Arsitektur 3-Tier Clean MVC, 4 Diagram UML lengkap (Use Case, Activity, Class, Sequence), dan ERD basis data ternormalisasi. |
+| **Test Matrix** | **Tahap 3 (30%)** | [`docs/03_Test_Plan_and_Results.md`](docs/03_Test_Plan_and_Results.md) | Hasil eksekusi test suite otomatis (Unit, Integration, Security), mitigasi OWASP Top 10, dan verifikasi CI/CD GitHub Actions. |
+| **Panduan Video**| **Tahap 4 (25%)** | [`docs/04_Panduan_Presentasi_dan_Video.md`](docs/04_Panduan_Presentasi_dan_Video.md) | Skrip presentasi kata demi kata untuk Progres 1 (3–5 menit), Progres 2 (5–7 menit), dan Live Demo Final (8–12 menit) dengan webcam. |
+
+---
+
 ## 🛠️ Petunjuk Instalasi & Menjalankan Proyek (Setup Instruction)
 
 ### 1. Prasyarat Sistem
