@@ -546,3 +546,4 @@ if __name__ == '__main__':
     generate_class_diagram_v2()
     generate_sequence_diagram_v2()
     print("Semua 4 Diagram UML Versi 2.0 berhasil dibuat dan disimpan!")
+
