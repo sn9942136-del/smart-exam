@@ -105,3 +105,4 @@ Smart Exam merupakan aplikasi web independen (*self-contained*) dengan arsitektu
 ---
 
 *Disahkan untuk pemenuhan Tahap 1 Penilaian OBE Mata Kuliah Rekayasa Perangkat Lunak STMIK IKMI Cirebon.*
+

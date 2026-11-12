@@ -88,3 +88,4 @@
    - Buka browser pada resolusi 1080p (Full HD) dan perbesar font browser (Ctrl + '+') jika teks terlihat kecil.
 3. **Penyimpanan Link Video**:
    - Setelah video selesai direkam dan diunggah ke YouTube, salin URL video tersebut dan ganti placeholder `[Link Video]` di berkas `README.md`.
+

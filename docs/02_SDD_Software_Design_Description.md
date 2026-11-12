@@ -58,47 +58,63 @@ graph TD
 
 ## 2. DIAGRAM UML (UNIFIED MODELING LANGUAGE)
 
-### 2.1 Use Case Diagram
+### 2.1 Use Case Diagram (6 Aktor: 4 Kiri & 2 Kanan)
+
+![Use Case Diagram](diagrams/01_use_case_diagram.png)
 
 ```mermaid
 flowchart LR
-    subgraph Actors
-        Siswa["Siswa / Peserta Ujian"]
-        Guru["Guru / Pembuat Soal"]
-        Admin["Super Admin / Admin Sistem"]
+    subgraph AktorPrimer["Aktor Primer (Sisi Kiri)"]
+        SuperAdmin["Super Admin"]
+        Admin["Administrator"]
+        Guru["Guru / Pengawas"]
+        Siswa["Peserta (Siswa)"]
     end
 
-    subgraph "Sistem Smart Exam"
-        UC01["UC-01: Autentikasi & Verifikasi OTP"]
-        UC02["UC-02: Kalibrasi Dual Kamera WebRTC"]
-        UC03["UC-03: Mengerjakan Ujian & Auto-Save"]
-        UC04["UC-04: Deteksi Kecurangan AI Face Mesh"]
-        UC05["UC-05: Kelola Bank Soal & Paket Ujian"]
-        UC06["UC-06: Monitoring Live Peserta Ujian"]
-        UC07["UC-07: Koreksi Esai Otomatis AI"]
-        UC08["UC-08: Tanya AI Chatbot Operasional"]
-        UC09["UC-09: Kelola Pengguna & Pengaturan Sistem"]
-        UC10["UC-10: Ekspor Rekap Nilai PDF / Excel"]
+    subgraph SmartExamBoundary["Sistem Smart Exam (Dual Camera AI & Live DB)"]
+        UC01["UC-01: Autentikasi & Sesi Multi-Role"]
+        UC02["UC-02: Verifikasi 2FA OTP"]
+        UC03["UC-03: Kelola Bank Soal & Paket Ujian"]
+        UC04["UC-04: Kalibrasi Dual Camera WebRTC"]
+        UC05["UC-05: Pengerjaan Ujian CBT & Auto-Save"]
+        UC06["UC-06: Deteksi Kecurangan AI Face Mesh"]
+        UC07["UC-07: Monitoring Ujian Live"]
+        UC08["UC-08: Koreksi Nilai & Esai AI"]
+        UC09["UC-09: Chatbot Operasional Live DB"]
+        UC10["UC-10: Audit Log & Parameter AI"]
     end
+
+    subgraph AktorSekunder["Aktor Sekunder / Sistem (Sisi Kanan)"]
+        AIProctor["AI Proctoring Engine"]
+        OTPGateway["Sistem Layanan OTP"]
+    end
+
+    SuperAdmin --> UC01
+    SuperAdmin --> UC03
+    SuperAdmin --> UC07
+    SuperAdmin --> UC09
+    SuperAdmin --> UC10
+
+    Admin --> UC01
+    Admin --> UC03
+    Admin --> UC07
+    Admin --> UC09
+
+    Guru --> UC01
+    Guru --> UC03
+    Guru --> UC07
+    Guru --> UC08
+    Guru --> UC09
 
     Siswa --> UC01
     Siswa --> UC02
-    Siswa --> UC03
     Siswa --> UC04
+    Siswa --> UC05
 
-    Guru --> UC01
-    Guru --> UC05
-    Guru --> UC06
-    Guru --> UC07
-    Guru --> UC08
-    Guru --> UC10
-
-    Admin --> UC01
-    Admin --> UC05
-    Admin --> UC06
-    Admin --> UC08
-    Admin --> UC09
-    Admin --> UC10
+    UC02 -.-> OTPGateway
+    UC04 -.-> AIProctor
+    UC05 -.-> AIProctor
+    UC06 -.-> AIProctor
 ```
 
 #### Skenario Use Case Utama (UC-03: Mengerjakan Ujian dengan AI Proctoring)
@@ -118,6 +134,8 @@ flowchart LR
 ---
 
 ### 2.2 Activity Diagram (Alur Pelaksanaan Ujian & Pengawasan AI)
+
+![Activity Diagram](diagrams/02_activity_diagram.png)
 
 ```mermaid
 flowchart TD
@@ -159,6 +177,8 @@ flowchart TD
 ---
 
 ### 2.3 Class Diagram (Arsitektur Model, Controller, Service)
+
+![Class Diagram](diagrams/03_class_diagram.png)
 
 ```mermaid
 classDiagram
@@ -262,7 +282,9 @@ classDiagram
 
 ---
 
-### 2.4 Sequence Diagram
+### 2.4 Sequence Diagram (Interaksi End-to-End Sistem)
+
+![Sequence Diagram](diagrams/04_sequence_diagram.png)
 
 #### Sequence Diagram 1: Autentikasi Pengguna & Two-Factor OTP
 ```mermaid
@@ -438,3 +460,4 @@ erDiagram
 ---
 
 *Disahkan untuk pemenuhan Tahap 2 Penilaian OBE Mata Kuliah Rekayasa Perangkat Lunak STMIK IKMI Cirebon.*
+
