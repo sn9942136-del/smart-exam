@@ -1,143 +1,224 @@
-# Sistem Ujian Online Berbasis Dual Kamera AI
+# Smart Exam — Sistem Ujian Online Berbasis AI & Dual Camera Proctoring
 
-Aplikasi web sistem ujian online berbasis Computer-Based Test (CBT) dengan pengawasan cerdas (*AI Proctoring*) berbasis dua kamera (Kamera Utama untuk pelacakan wajah/arah pandang & Kamera Sekunder untuk lingkungan sekitar meja kerja peserta). Dibangun menggunakan arsitektur Clean MVC PHP 8.2+ yang modular, terstruktur, aman, dan mudah dipelihara tanpa ketergantungan framework berat.
+[![Smart Exam CI/CD Pipeline](https://github.com/sn9942136-del/smart-exam/actions/workflows/ci.yml/badge.svg)](https://github.com/sn9942136-del/smart-exam/actions/workflows/ci.yml)
+![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-777BB4?logo=php&logoColor=white)
+![MySQL Version](https://img.shields.io/badge/MySQL-8.0%2B-4479A1?logo=mysql&logoColor=white)
+![AI Engine](https://img.shields.io/badge/AI-Google%20Gemini%20%7C%20MediaPipe-blue?logo=google)
+![WebRTC](https://img.shields.io/badge/WebRTC-Dual%20Camera%20Live-orange?logo=webrtc)
+![Architecture](https://img.shields.io/badge/Architecture-Clean%20MVC%20%26%20SOLID-success)
+
+> **Tugas Proyek Akhir Mandiri — Rekayasa Perangkat Lunak (Berbasis Kurikulum OBE)**  
+> Program Studi S1 Teknik Informatika — **STMIK IKMI Cirebon**  
+> Tahun Akademik 2026/2027 (Semester 3)
 
 ---
 
-## 🚀 Panduan Cepat 5 Langkah (Quick Start)
+## 📌 Identitas Mahasiswa & Kelompok
 
-Untuk menjalankan aplikasi dari kondisi awal secara instan:
+| Data Mahasiswa | Informasi Resmi |
+| :--- | :--- |
+| **Nama Lengkap** | **Salsa Nabila** |
+| **NIM** | **41257158** |
+| **Program Studi** | S1 Teknik Informatika |
+| **Perguruan Tinggi** | STMIK IKMI Cirebon |
+| **Mata Kuliah / SKS** | Rekayasa Perangkat Lunak (TIKB2503021) / 4 SKS (2 Teori + 2 Praktik) |
+| **Dosen Pengampu** | **Yudhistira Arie Wijaya, M.Kom., CDS.** |
+| **Nama Kelompok** | **Tiba Tiba Talun** |
+| **Tema Topik Kelompok** | **E-Learning & Smart Education AI** |
+| **Judul Proyek Mandiri** | **Smart Exam: Sistem Ujian Online Berbasis Web dengan Pengawasan Dual Camera AI dan Chatbot Operasional Terintegrasi Database** |
+| **Repositori GitHub** | [https://github.com/sn9942136-del/smart-exam](https://github.com/sn9942136-del/smart-exam) |
 
-### 1. Salin File Konfigurasi Environment
+---
+
+## 📖 Deskripsi Eksekutif Proyek
+
+**Smart Exam** adalah platform ujian daring (*Computer-Based Test / CBT*) generasi baru yang dirancang untuk menjawab tantangan terbesar dalam pembelajaran jarak jauh: **integritas akademik dan pencegahan kecurangan tanpa mengorbankan privasi peserta**. 
+
+Sistem ini mentransformasikan kebutuhan abstrak institusi pendidikan menjadi produk perangkat lunak tangguh (*end-to-end software engineering*) yang memadukan arsitektur **Clean MVC berprinsip SOLID** dengan teknologi **Kecerdasan Artifisial (AI)** dan **WebRTC Dual Camera**.
+
+### 🌟 Nilai Guna & Inovasi Utama
+1. **Dual-Camera Proctoring (Kamera Depan + Sudut Samping):** Mengeliminasi titik buta (*blind spots*) dengan menyinkronkan webcam depan laptop (untuk deteksi wajah & *eye-tracking*) dan kamera samping (menggunakan smartphone via DroidCam/Iriun/WebRTC) untuk memantau meja kerja peserta.
+2. **AI Asisten Operasional (Grounding Live Database):** Chatbot berbasis Google Gemini yang terhubung langsung ke basis data sistem secara *real-time*, mampu menjawab pertanyaan seputar jadwal, bank soal, dan statistik secara singkat, padat, dan akurat dengan batasan hak akses role.
+3. **Koreksi Esai Cerdas Otomatis:** Menilai jawaban esai siswa berdasarkan kesesuaian semantik terhadap rubrik dan kunci jawaban guru.
+4. **Generator Bank Soal AI:** Mempermudah guru menyusun instrumen evaluasi bertingkat taksonomi Bloom secara otomatis.
+5. **Keamanan & Ketahanan Tingkat Tinggi:** Dilengkapi proteksi CSRF, filter Rate-Limiting brute force, verifikasi OTP multi-kanal (Email SMTP Gmail & WhatsApp Gateway), sesi terisolasi, serta audit logging forensik.
+
+---
+
+## 🤖 Spesifikasi Fitur Kecerdasan Artifisial (AI)
+
+| Fitur AI | Teknologi / Engine | Fungsi & Peran Strategis |
+| :--- | :--- | :--- |
+| **Dual-Camera Face Tracking** | MediaPipe Face Mesh & Canvas Vision | Mendeteksi keberadaan wajah, menghitung sudut pandang (*gaze/look away*), dan memicu peringatan jika wajah tidak terdeteksi atau terdapat wajah lain di layar. |
+| **Operational Live Chatbot** | Google Gemini (3.5 Flash-Lite / 3.8 Flash) | Asisten cerdas operasional sistem yang membaca 50+ tabel database aktif secara *real-time*, menyajikan data jadwal, hasil nilai, dan statistik untuk Admin, Guru, dan Siswa. |
+| **Semantic Essay Grading** | Gemini NLP & Cosine Similarity | Menganalisis esai siswa, memberikan skor otomatis yang adil, serta menghasilkan umpan balik perbaikan (*constructive feedback*). |
+| **Smart Question Generator** | Gemini Structured Prompting | Membantu guru membuat draf butir soal (Pilihan Ganda, Benar/Salah, Esai) lengkap dengan opsi, pembahasan, dan tingkat kesulitan (*easy/medium/hard*). |
+
+---
+
+## 🎥 Tautan Video Presentasi & Live Demo
+
+Sesuai ketentuan standar panduan proyek akhir, video presentasi diunggah dengan format perekaman layar (*screen recording*) disertai wajah mahasiswa (*webcam aktif di pojok layar*):
+
+| Tahapan Video | Konten yang Dibahas | Target Durasi | Tautan Video (YouTube / GDrive) |
+| :--- | :--- | :---: | :--- |
+| **Video Progres 1: PRD & Konsep Aplikasi** | Latar belakang masalah, analisis kebutuhan fungsional & non-fungsional, serta peran strategis fitur AI. | 3–5 Menit | [Tautan Video Progres 1 (Klik di Sini)](#) |
+| **Video Progres 2: Pemodelan UML & UI/UX** | Pembedahan 4 Diagram UML Utama (Use Case, Activity, Class, Sequence), ERD, dan interaktif prototype Figma. | 5–7 Menit | [Tautan Video Progres 2 (Klik di Sini)](#) |
+| **Video Final: Live Demo & Sistem Utuh** | Elevator Pitch, arsitektur sistem, **Live Demo aplikasi + fitur AI real-time**, Unit Test, verifikasi status hijau CI/CD, & refleksi. | 8–12 Menit | [Tautan Video Final Demo (Klik di Sini)](#) |
+
+*(Catatan: Tautan video di atas dapat diperbarui dengan URL rekaman YouTube/Google Drive Anda sebelum tenggat Pertemuan ke-16).*
+
+---
+
+## 📐 Arsitektur Perangkat Lunak & Desain UML
+
+Aplikasi dibangun dengan mematuhi standar rekayasa perangkat lunak modern:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    PRESENTATION TIER                        │
+│   HTML5 / CSS3 (Bootstrap 5.3) / Modern Vanilla JS          │
+│   WebRTC Camera Stream / MediaPipe Face Mesh Client         │
+└──────────────────────────────▲──────────────────────────────┘
+                               │ HTTP / JSON REST
+┌──────────────────────────────▼──────────────────────────────┐
+│                    APPLICATION LOGIC TIER                   │
+│   Custom Clean MVC Engine (PHP 8.2+)                        │
+│   • Controllers (Admin, Guru, Siswa, Exam, Chatbot, Notif)  │
+│   • Middlewares & Filters (Auth, Role, CSRF, Rate-Limit)    │
+│   • Services (AiChat, Proctoring, Grading, Otp, Queue)      │
+└──────────────────────────────▲──────────────────────────────┘
+                               │ PDO Prepared Statements
+┌──────────────────────────────▼──────────────────────────────┐
+│                      DATA & AI TIER                         │
+│   • MySQL Database (50+ Relational Tables & Foreign Keys)   │
+│   • Google Gemini REST API (Live LLM Engine)                │
+│   • Fonnte WhatsApp Gateway & Gmail SMTP Relay              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 4 Pemodelan UML Utama:
+1. **Use Case Diagram & Skenario:** Menggambarkan 4 aktor utama (*Super Admin*, *Administrator*, *Guru Pengawas*, dan *Peserta Didik*) beserta relasi *include/extend* pada fitur CBT dan AI.
+2. **Activity Diagram:** Memvisualisasikan alur bisnis sistem mulai dari verifikasi kamera, pengerjaan ujian, sinkronisasi autosave jawaban, hingga deteksi kecurangan AI.
+3. **Class Diagram (SOLID Principles):** Mengelompokkan Controller, Model, Service, dan Provider dengan prinsip *Single Responsibility*, *Open/Closed*, dan *Dependency Inversion*.
+4. **Sequence Diagram:** Merinci alur pertukaran pesan secara kronologis antara *Browser Peserta* $\leftrightarrow$ *Backend Server* $\leftrightarrow$ *Database MySQL* $\leftrightarrow$ *Google Gemini AI API*.
+
+---
+
+## 🛠️ Petunjuk Instalasi & Menjalankan Proyek (Setup Instruction)
+
+### 1. Prasyarat Sistem
+* **PHP:** Versi 8.2 atau lebih baru (Ekstensi aktif: `pdo_mysql`, `mbstring`, `curl`, `json`, `gd`, `openssl`).
+* **Basis Data:** MySQL 8.0+ atau MariaDB 10.4+ (misal via XAMPP).
+* **Web Server:** Apache (XAMPP) atau PHP Built-in Server.
+* **Browser:** Google Chrome / Microsoft Edge versi terbaru (mendukung WebRTC & MediaDevices).
+
+---
+
+### 2. Langkah Instalasi Cepat
+
+#### Langkah 1: Kloning Repositori
+```bash
+git clone https://github.com/sn9942136-del/smart-exam.git
+cd smart-exam
+```
+*(Atau letakkan folder pada direktori web server lokal: `C:\xampp\htdocs\PRD`)*
+
+#### Langkah 2: Konfigurasi Lingkungan (`.env`)
+Salin file template `.env.example` menjadi `.env`:
 ```bash
 cp .env.example .env
 ```
+Sesuaikan kredensial database pada `.env`:
+```ini
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ujian_dual_kamera
+DB_USERNAME=root
+DB_PASSWORD=""
+```
 
-### 2. Inisialisasi Database & Seeder Lengkap (1 Perintah)
-Pastikan server MySQL/MariaDB (misal via XAMPP) sudah aktif pada port 3306, lalu jalankan:
+#### Langkah 3: Migrasi Database & Seeder Otomatis (1 Perintah)
+Pastikan server MySQL pada XAMPP sudah berjalan, lalu jalankan:
 ```bash
 php database/migrate.php --fresh --seed
 ```
-*Perintah ini otomatis membuat database `ujian_dual_kamera`, mengeksekusi 36 skema tabel, dan mengisi data demo master role, akun pengguna, bank soal, butir soal, jadwal ujian, dan token aktif.*
+*Perintah ini otomatis membangun 50+ tabel relasional, membuat aturan indeks/foreign key, serta menyuntikkan data master role, pengguna demo, 10 bank soal kurikulum, 10 paket ujian terstandar, dan jadwal kelas.*
 
-### 3. Jalankan Web Server
-- **Opsi XAMPP Apache**: Letakkan folder di `c:/xampp/htdocs/PRD`, lalu buka `http://localhost/PRD/public`
-- **Opsi PHP Built-in Server**:
+#### Langkah 4: Menjalankan Server Aplikasi
+* **Menggunakan XAMPP Apache:**
+  Buka browser dan akses alamat:
+  👉 `http://localhost/PRD/public`
+* **Menggunakan PHP Built-in CLI Server:**
   ```bash
   php -S localhost:8000 -t public
   ```
-  Lalu buka browser di `http://localhost:8000`
-
-### 4. Login Menggunakan Akun Demo Bawaan
-
-| Role | Email Login | Kata Sandi | Hak Akses Utama |
-| :--- | :--- | :--- | :--- |
-| **Super Admin** | `superadmin@example.com` | `SuperAdmin123!` | Manajemen penuh sistem, role, master data, audit logs, konfigurasi AI |
-| **Administrator** | `admin@example.com` | `Admin123!` | Manajemen pengguna, kelas, mata pelajaran, penjadwalan & token terpusat |
-| **Guru / Pengawas** | `guru@example.com` | `Guru123!` | Bank Soal (`BNK-MAT12-UAS`), AI Generator Soal, Live Monitoring, Grading |
-| **Peserta Didik** | `siswa@example.com` | `Siswa123!` | CBT Exam Room, Dual-Cam Pre-check, Autosave, Submit, Hasil Nilai |
-
-### 5. Data Ujian Demo Siap Uji
-- **Mata Pelajaran**: Matematika Peminatan (Kelas XII MIPA 1)
-- **Kode Ujian**: `EXAM-MAT12-UAS`
-- **Token Aktif**: `UAS2026`
-- **Jumlah Soal**: 6 Soal (5 Pilihan Ganda + 1 Essay)
-- **Fitur Terpasang**: Dual Camera AI Proctoring, Acak Soal, Acak Opsi, Anti-cheat Detector, Real-time Autosave.
+  Lalu buka browser di: `http://localhost:8000`
 
 ---
 
-## 🧪 Menjalankan Pengujian Otomatis (Test Suites)
+## 🔑 Akun Uji Coba Bawaan (Demo Accounts)
 
-Aplikasi dilengkapi dengan automated test suite untuk memvalidasi integritas kode dan keamanan:
+Untuk mempermudah pengujian seluruh hak akses sistem:
+
+| Peran (Role) | Email Login | Kata Sandi | Lingkup Hak Akses |
+| :--- | :--- | :--- | :--- |
+| **Super Admin** | `superadmin@example.com` | `SuperAdmin123!` | Kontrol penuh sistem, audit logs forensik, pengaturan AI & notifikasi. |
+| **Administrator** | `admin@example.com` | `Admin123!` | Manajemen akun pengguna, kelas, mapel, jadwal terpusat, dan rekapitulasi. |
+| **Guru / Pengawas** | `guru@example.com` | `Guru123!` | Kelola bank soal, paket ujian, live monitoring ujian, koreksi esai AI. |
+| **Peserta Didik (MIPA)**| `siswa@example.com` | `Siswa123!` | Kalibrasi dual-cam, ruang ujian CBT, pengerjaan soal, submit nilai. |
+| **Peserta Didik (IPS)** | `siswa.ips@example.com` | `Siswa123!` | Ruang ujian CBT khusus rumpun IPS & live AI chatbot pendamping. |
+
+---
+
+## 🧪 Pengujian Otomatis & DevOps CI/CD
+
+Aplikasi dilengkapi *automated test suite* komprehensif untuk memastikan keandalan kode (*Reliability*) dan keamanan data (*Security*):
 
 ```bash
-# 1. Menjalankan 12-Modul Production Audit Runner (69 Asersi Otomatis)
-php tests/production_audit_runner.php
-
-# 2. Menjalankan Security Regression Test Suite (19 Security Asersi)
+# 1. Menjalankan Security Regression Test Suite (19 Asersi Keamanan)
 php tests/test_security_regression_suite.php
 
-# 3. Menjalankan Exam Lifecycle & Management Tests
-php tests/test_exam_management.php
+# 2. Menjalankan Pengujian Notifikasi Multi-Kanal (Email & WhatsApp)
+php tests/test_otp_notification_integration.php
 
-# 4. Menjalankan End-to-End CBT Exam Room Flow Tests
-php tests/test_phase7_8_9_e2e_full.php
+# 3. Menjalankan Audit Kualitas Respon AI Chatbot & Database Grounding
+php tests/test_smart_exam_knowledge_and_db_to_the_point.php
 ```
+
+### Otomatisasi GitHub Actions CI/CD:
+File alur kerja [`.github/workflows/ci.yml`](.github/workflows/ci.yml) secara otomatis mengeksekusi pemeriksaan sintaks (*linting*), migrasi basis data pada kontainer MySQL layanan, serta verifikasi kelulusan uji keamanan pada setiap *push* dan *pull request* ke branch `main`.
 
 ---
 
-## 📁 Struktur Direktori Proyek
+## 📂 Struktur Direktori Proyek
 
 ```
-PRD/
+smart-exam/
+├── .github/workflows/ci.yml  # Pipeline CI/CD GitHub Actions
 ├── app/
-│   ├── Config/              # Konfigurasi aplikasi, koneksi database, dan routing
-│   │   ├── App.php          # URL, timezone, session lifetime, CSRF toggle
-│   │   ├── Database.php     # Singleton PDO MySQL connector
-│   │   └── Routes.php       # Deklarasi seluruh routing & middleware filters
-│   ├── Controllers/         # Penanganan HTTP Request & Response
-│   │   ├── BaseController.php         # Base Controller (view, json, redirect, auth)
-│   │   ├── AuthController.php         # Login, logout, multi-role auth
-│   │   ├── PasswordController.php     # Forgot password & OTP reset
-│   │   ├── UserController.php         # User management & credentials reset
-│   │   ├── ExamController.php         # Exam management & live token generation
-│   │   ├── QuestionBankController.php   # Bank soal & topik
-│   │   ├── QuestionController.php     # Butir soal PG, Essay, True/False
-│   │   ├── ExamSessionController.php  # CBT Engine (Mulai, Room, Autosave, Submit)
-│   │   ├── ExamAnswerController.php   # AJAX autosave & response tracking
-│   │   ├── CameraPreCheckController.php # Diagnostik & kalibrasi Dual Camera
-│   │   ├── AiProctoringController.php # Telemetri AI, deteksi wajah & pelanggaran
-│   │   ├── ExamMonitoringController.php # Real-time proctoring monitoring
-│   │   ├── GradingController.php      # Auto-grading PG & manual essay grading
-│   │   ├── ReportController.php       # Ekspor PDF (Dompdf) & Excel (PhpSpreadsheet)
-│   │   ├── AiQuestionController.php   # Generator butir soal cerdas (Gemini / OpenAI)
-│   │   └── Student*.php               # Controller khusus peserta didik
-│   ├── Filters/             # Middleware filter
-│   │   ├── AuthFilter.php   # Memastikan pengguna telah terotentikasi
-│   │   ├── RoleFilter.php   # Pembatasan akses berbasis Role (RBAC)
-│   │   └── CsrfFilter.php   # Validasi token keamanan anti-CSRF
-│   ├── Helpers/             # Helper fungsi global (app_helper, auth_helper)
-│   ├── Libraries/           # Core library (Router, Request, Response, Session, Database)
-│   ├── Models/              # Active Record / Query Builder (36 Tabel Model)
-│   ├── Services/            # Business Logic Layer (Terpisah dari Controller)
-│   │   ├── AI/              # Provider AI (Gemini, OpenAI, Mock)
-│   │   ├── AuthService.php
-│   │   ├── ExamService.php
-│   │   ├── ExamSessionService.php
-│   │   ├── ExamAnswerService.php
-│   │   ├── ExamTimerService.php
-│   │   ├── FaceVerificationService.php
-│   │   ├── ViolationDetectionService.php
-│   │   ├── AiProctoringService.php
-│   │   ├── ExamMonitoringService.php
-│   │   ├── GradingService.php
-│   │   ├── ResultService.php
-│   │   └── ReportService.php
-│   ├── Views/               # Antarmuka Blade-like PHP Templates (layouts, components)
-│   └── bootstrap.php        # PSR-4 Autoloader & Error Handler bootstrap
+│   ├── Config/              # Konfigurasi Aplikasi, Database, Routing, Notifikasi
+│   ├── Controllers/         # Kontroler Presentasi & Logika Bisnis (MVC)
+│   ├── Filters/             # Middleware (Auth, Role, CSRF, Rate-Limiting)
+│   ├── Helpers/             # Fungsi Pembantu Global
+│   ├── Libraries/           # Pustaka Database PDO, SmtpClient, WhatsAppClient
+│   ├── Models/              # Model Relasional Entitas Basis Data
+│   ├── Services/            # Service Layer (AI Chat, Proctoring, Grading, Queue)
+│   └── Views/               # Tampilan Antarmuka Antarmuka Pengguna
 ├── database/
-│   ├── migrate.php          # Unified CLI Migration & Seeder Engine
-│   ├── migrations/          # Berkas skrip SQL skema tabel (001 - 009)
-│   └── seeders/             # DatabaseSeeder komprehensif
-├── public/                  # Document root publik (index.php, assets, uploads)
-├── storage/                 # Direktori writable untuk log harian & rekaman
-├── tests/                   # Automated unit & E2E test suites
-├── vendor/                  # Pustaka third-party (Dompdf, PhpSpreadsheet)
-├── .env.example             # Template konfigurasi environment
-├── .env                     # File konfigurasi lokal aktif
-├── composer.json            # Daftar dependensi composer
-├── INSTALLATION.md          # Panduan instalasi lengkap
-└── README.md                # Dokumentasi utama proyek
+│   ├── migrations/          # Berkas Skema SQL Terstruktur
+│   ├── seeders/             # Pembangkit Data Master & Demo
+│   └── migrate.php          # Migration Engine CLI
+├── public/                  # Dokumen Root Web Server (index.php, CSS, JS, Aset)
+├── storage/                 # Direktori Log Sistem & Unggahan
+├── tests/                   # Kumpulan Automated Test Suites
+├── .env.example             # Template Konfigurasi Publik
+├── .gitignore               # Proteksi Berkas Kredensial Sensitif
+└── README.md                # Dokumentasi Utama Proyek OBE
 ```
 
 ---
 
-## 🛡️ Keamanan & Kepatuhan Arsitektur
+## 📜 Lisensi & Pernyataan Orisinalitas
 
-- **Server-Authoritative Timer**: Sisa waktu ujian dihitung murni di sisi server berdasarkan `started_at` dan `duration_minutes`. Manipulasi jam klien tidak berpengaruh.
-- **Answer Ownership Validation**: Setiap request penyimpanan jawaban diverifikasi kepemilikan sesi dan nomor identitas peserta untuk mencegah cross-session tampering.
-- **Idempotent Single Submission**: Sesi ujian yang telah disubmit dikunci dengan status `'submitted'`. Double submit atau perubahan jawaban pasca submit ditolak secara otomatis.
-- **CSRF & XSS Protection**: Seluruh form mutasi dilindungi token CSRF dan rendering output disanitasi menggunakan helper `e()`.
-- **RBAC Strict Enforcement**: Filter middleware memastikan setiap endpoint hanya dapat diakses oleh role yang berwenang (Super Admin, Admin, Guru, Siswa).
-- **Proctoring Telemetry Security**: Telemetri AI dan pencatatan pelanggaran diverifikasi secara ketat hanya aktif pada sesi berstatus `'ongoing'`.
-
+Proyek ini dikembangkan secara mandiri oleh **Salsa Nabila (NIM: 41257158)** untuk memenuhi persyaratan kelulusan Ujian Akhir Semester pada mata kuliah **Rekayasa Perangkat Lunak (TIKB2503021)** di **STMIK IKMI Cirebon**. Seluruh kode sumber, arsitektur sistem, dan integrasi fitur AI adalah karya orisinal yang mematuhi standar etika akademik dan integritas rekayasa perangkat lunak.

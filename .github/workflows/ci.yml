@@ -1,0 +1,52 @@
+name: Smart Exam CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build, Lint & Automated Test Suite
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: ujian_dual_kamera
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup PHP Environment
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: pdo, pdo_mysql, mbstring, curl, json, gd, xml
+          coverage: none
+
+      - name: 📄 Setup Environment Config (.env)
+        run: |
+          cp .env.example .env
+          sed -i 's/DB_PASSWORD=/DB_PASSWORD=root/' .env
+          sed -i 's/DB_HOST=127.0.0.1/DB_HOST=127.0.0.1/' .env
+          sed -i 's/DB_DATABASE=ujian_dual_kamera/DB_DATABASE=ujian_dual_kamera/' .env
+
+      - name: 🔍 PHP Syntax Linting
+        run: |
+          find app bin database -type f -name "*.php" -exec php -l {} +
+
+      - name: 🗄️ Run Database Migrations & Seeders
+        run: |
+          php database/migrate.php --fresh --seed
+
+      - name: 🛡️ Execute Security Regression Suite
+        run: |
+          php tests/test_security_regression_suite.php
