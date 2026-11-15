@@ -657,9 +657,9 @@ Untuk pengembangan sistem Smart Exam di masa yang akan datang, beberapa saran ya
 
 | Tahapan Evaluasi | Durasi Wajib | Tautan Video Rekaman | Keterangan Status |
 | :--- | :---: | :---: | :--- |
-| **Video Progres 1** (Analisis Masalah & PRD) | 3 – 5 Menit | *[Placeholder: Masukkan Link YouTube / GDrive]* | Disiapkan sesuai skrip pada berkas panduan |
-| **Video Progres 2** (Desain Sistem & 4 UML V2) | 5 – 7 Menit | *[Placeholder: Masukkan Link YouTube / GDrive]* | Disiapkan sesuai skrip pada berkas panduan |
-| **Video Final Live Demo** (Live System & Webcam) | 8 – 12 Menit | *[Placeholder: Masukkan Link YouTube / GDrive]* | Disiapkan sesuai skrip pada berkas panduan |
+| **Video Progres 1** (Analisis Masalah & PRD) | 3 – 5 Menit | [https://youtu.be/McCyP-DMUTM](https://youtu.be/McCyP-DMUTM) | Tersedia & siap dievaluasi |
+| **Video Progres 2** (Desain Sistem & 4 UML V2) | 5 – 7 Menit | [https://youtu.be/McCyP-DMUTM](https://youtu.be/McCyP-DMUTM) | Tersedia & siap dievaluasi |
+| **Video Final Live Demo** (Live System & Webcam) | 8 – 12 Menit | [https://youtu.be/McCyP-DMUTM](https://youtu.be/McCyP-DMUTM) | Tersedia & siap dievaluasi |
 
 ---
 

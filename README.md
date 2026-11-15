@@ -62,9 +62,9 @@ Sesuai ketentuan standar panduan proyek akhir, video presentasi diunggah dengan 
 
 | Tahapan Video | Konten yang Dibahas | Target Durasi | Tautan Video (YouTube / GDrive) |
 | :--- | :--- | :---: | :--- |
-| **Video Progres 1: PRD & Konsep Aplikasi** | Latar belakang masalah, analisis kebutuhan fungsional & non-fungsional, serta peran strategis fitur AI. | 3–5 Menit | [Tautan Video Progres 1 (Klik di Sini)](#) |
-| **Video Progres 2: Pemodelan UML & UI/UX** | Pembedahan 4 Diagram UML Utama (Use Case, Activity, Class, Sequence), ERD, dan interaktif prototype Figma. | 5–7 Menit | [Tautan Video Progres 2 (Klik di Sini)](#) |
-| **Video Final: Live Demo & Sistem Utuh** | Elevator Pitch, arsitektur sistem, **Live Demo aplikasi + fitur AI real-time**, Unit Test, verifikasi status hijau CI/CD, & refleksi. | 8–12 Menit | [Tautan Video Final Demo (Klik di Sini)](#) |
+| **Video Progres 1: PRD & Konsep Aplikasi** | Latar belakang masalah, analisis kebutuhan fungsional & non-fungsional, serta peran strategis fitur AI. | 3–5 Menit | [https://youtu.be/McCyP-DMUTM](https://youtu.be/McCyP-DMUTM) |
+| **Video Progres 2: Pemodelan UML & UI/UX** | Pembedahan 4 Diagram UML Utama (Use Case, Activity, Class, Sequence), ERD, dan interaktif prototype Figma. | 5–7 Menit | [https://youtu.be/McCyP-DMUTM](https://youtu.be/McCyP-DMUTM) |
+| **Video Final: Live Demo & Sistem Utuh** | Elevator Pitch, arsitektur sistem, **Live Demo aplikasi + fitur AI real-time**, Unit Test, verifikasi status hijau CI/CD, & refleksi. | 8–12 Menit | [https://youtu.be/McCyP-DMUTM](https://youtu.be/McCyP-DMUTM) |
 
 *(Catatan: Tautan video di atas dapat diperbarui dengan URL rekaman YouTube/Google Drive Anda sebelum tenggat Pertemuan ke-16).*
 
