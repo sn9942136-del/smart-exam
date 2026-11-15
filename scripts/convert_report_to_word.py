@@ -286,3 +286,4 @@ def format_inline_text(paragraph, text):
 
 if __name__ == '__main__':
     create_word_document()
+

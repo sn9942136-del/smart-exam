@@ -883,9 +883,9 @@ class AiChatService
         $db = \App\Libraries\Database::getConnection();
 
         // 1b-2. Pertanyaan Identitas Diri Sendiri To-The-Point ("siapa saya?", "saya siapa?", "apa role saya?")
-        // Menjawab ringkas dan to the point persis contoh user: "Anda adalah Admin pada Smart Exam."
+        // Menjawab ringkas dan to the point: "Anda adalah Arie (Admin) pada Smart Exam."
         // Rincian lengkap profil akun hanya diberikan jika user meminta rincian/detail.
-        $isWhoAmI = (bool) preg_match('/^(siapa saya|saya siapa|siapa nama saya|nama saya siapa|saya login sebagai siapa|apa role saya|apa peran saya|role saya|peran saya)\b/i', $stripped)
+        $isWhoAmI = (bool) preg_match('/^(siapa saya|saya siapa|siapa saya ini|saya ini siapa|siapa aku|aku siapa|siapa nama saya|nama saya siapa|saya login sebagai siapa|apa role saya|apa peran saya|role saya|peran saya)\b/i', $stripped)
             && !preg_match('/\b(kelas|wali|ujian|nilai|jadwal|rincian|detail|dan|serta)\b/i', $stripped);
         if ($isWhoAmI && $userId > 0) {
             $meStmt = $db->prepare("
@@ -900,6 +900,7 @@ class AiChatService
             $meUser = $meStmt->fetch();
             $myActualName = $meUser['name'] ?? 'Pengguna';
             $myActualRole = $meUser['role_name'] ?? $roleContext;
+            $cleanName = (!empty($meUser['name']) && trim($meUser['name']) !== '') ? trim($meUser['name']) : 'Pengguna';
 
             if (preg_match('/\b(nama saya|nama)\b/i', $stripped)) {
                 return "Nama Anda adalah **{$myActualName}**.";
@@ -916,12 +917,23 @@ class AiChatService
                 return "Role Anda adalah **{$rLbl}** pada Smart Exam.";
             }
 
-            // "siapa saya?" / "saya siapa?" -> to the point: "Anda adalah Admin pada Smart Exam."
+            // "siapa saya?" / "saya siapa?" -> to the point: "Anda adalah Arie (Admin) pada Smart Exam."
             return match($myActualRole) {
-                'super_admin', 'admin' => "Anda adalah Admin pada Smart Exam.",
-                'guru' => "Anda adalah {$myActualName}, Guru pada Smart Exam.",
-                'peserta_didik' => "Anda adalah {$myActualName}, Peserta Didik pada Smart Exam.",
-                default => "Anda adalah {$myActualName} pada Smart Exam."
+                'super_admin' => ($cleanName !== 'Pengguna' && $cleanName !== 'Super Administrator')
+                    ? "Anda adalah {$cleanName} (Super Admin) pada Smart Exam."
+                    : "Anda adalah Super Admin pada Smart Exam.",
+                'admin' => ($cleanName !== 'Pengguna')
+                    ? "Anda adalah {$cleanName} (Admin) pada Smart Exam."
+                    : "Anda adalah Admin pada Smart Exam.",
+                'guru' => ($cleanName !== 'Pengguna')
+                    ? "Anda adalah {$cleanName} (Guru) pada Smart Exam."
+                    : "Anda adalah Guru pada Smart Exam.",
+                'peserta_didik' => ($cleanName !== 'Pengguna')
+                    ? "Anda adalah {$cleanName} (Peserta Didik) pada Smart Exam."
+                    : "Anda adalah Peserta Didik pada Smart Exam.",
+                default => ($cleanName !== 'Pengguna')
+                    ? "Anda adalah {$cleanName} pada Smart Exam."
+                    : "Anda adalah Pengguna pada Smart Exam."
             };
         }
 

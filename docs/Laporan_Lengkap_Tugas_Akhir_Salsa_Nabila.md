@@ -671,3 +671,4 @@ Untuk pengembangan sistem Smart Exam di masa yang akan datang, beberapa saran ya
 | **Administrator** | `admin@example.com` | `Admin123!` | Manajemen akun akademik, kelas, mapel, jadwal terpusat. |
 | **Guru / Pengawas** | `guru@example.com` | `Guru123!` | Kelola bank soal, rilis ujian, live monitoring, koreksi esai. |
 | **Peserta (Siswa)** | `siswa@example.com` | `Siswa123!` | Kalibrasi kamera ganda, pengerjaan soal CBT, riwayat nilai. |
+

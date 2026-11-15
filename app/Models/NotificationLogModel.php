@@ -62,18 +62,55 @@ class NotificationLogModel extends BaseModel
         $now = date('Y-m-d H:i:s');
         $actualSentAt = ($cleanStatus === 'sent') ? ($sentAt ?? $now) : $sentAt;
 
-        return $this->insert([
+        $insertData = [
             'notification_id'  => $notificationId,
             'channel'          => $cleanChannel,
             'recipient'        => trim($recipient),
             'status'           => $cleanStatus,
-            'claimed_at'       => ($cleanStatus === 'processing') ? $now : null,
-            'claimed_by'       => null,
-            'attempts'         => 0,
             'response_payload' => $payloadStr,
             'sent_at'          => $actualSentAt,
             'created_at'       => $now
-        ]);
+        ];
+
+        if ($this->hasColumn('claimed_at')) {
+            $insertData['claimed_at'] = ($cleanStatus === 'processing') ? $now : null;
+        }
+        if ($this->hasColumn('claimed_by')) {
+            $insertData['claimed_by'] = null;
+        }
+        if ($this->hasColumn('attempts')) {
+            $insertData['attempts'] = 0;
+        }
+
+        return $this->insert($insertData);
+    }
+
+    protected ?array $existingColumns = null;
+
+    /**
+     * Dapatkan daftar kolom yang ada pada tabel notification_logs secara dinamis
+     */
+    public function getExistingColumns(): array
+    {
+        if ($this->existingColumns === null) {
+            try {
+                $stmt = $this->db()->prepare("SHOW COLUMNS FROM {$this->table}");
+                $stmt->execute();
+                $this->existingColumns = $stmt->fetchAll(\PDO::FETCH_COLUMN, 0) ?: [];
+            } catch (\Throwable) {
+                $this->existingColumns = [];
+            }
+        }
+        return $this->existingColumns;
+    }
+
+    /**
+     * Cek apakah kolom tertentu ada pada tabel
+     */
+    public function hasColumn(string $column): bool
+    {
+        $cols = $this->getExistingColumns();
+        return empty($cols) || in_array($column, $cols, true);
     }
 
     /**
