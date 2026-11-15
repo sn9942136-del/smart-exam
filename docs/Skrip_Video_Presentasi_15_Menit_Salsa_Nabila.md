@@ -6,7 +6,7 @@
 > * **NIM**: **41257158**
 > * **Program Studi**: S1 Teknik Informatika — **STMIK IKMI Cirebon**
 > * **Mata Kuliah / SKS**: Rekayasa Perangkat Lunak (TIKB2503021) / 4 SKS
-> * **Dosen Pengampu**: **Yudhistira Arie Wijaya, M.Kom., CDS.**
+> * **Dosen Pengampu**: **Yudhistira Arie Wijaya, M. Kom.**
 > * **Nama Kelompok**: **Tiba Tiba Talun**
 > * **Tema Topik Kelompok**: **E-Learning & Smart Education AI**
 > * **Total Alokasi Durasi**: **15 Menit 00 Detik**
@@ -51,7 +51,7 @@
 * **Narasi Suara**:
   > *"Bismillahirrohmanirrohim. Assalamu’alaikum Warahmatullahi Wabarakatuh.  
   > Selamat pagi, siang, dan salam sejahtera bagi kita semua.  
-  > Yang terhormat Bapak Dosen Pengampu mata kuliah Rekayasa Perangkat Lunak, Bapak **Yudhistira Arie Wijaya, M.Kom., CDS.**, serta rekan-rekan mahasiswa yang saya banggakan.  
+  > Yang terhormat Bapak Dosen Pengampu mata kuliah Rekayasa Perangkat Lunak, Bapak **Yudhistira Arie Wijaya, M. Kom.**, serta rekan-rekan mahasiswa yang saya banggakan.  
   > 
   > Perkenalkan, nama saya **Salsa Nabila**, dengan Nomor Induk Mahasiswa **41257158**, mahasiswi Program Studi S1 Teknik Informatika, Sekolah Tinggi Manajemen Informatika dan Komputer — **STMIK IKMI Cirebon**. Saya tergabung dalam kelompok **Tiba Tiba Talun** dengan fokus topik **E-Learning & Smart Education AI**.  
   > 
@@ -251,7 +251,7 @@
 * **Tampilan di Layar**: Tampilkan Slide Penutup yang memuat rangkuman capaian, ucapan terima kasih, dan tautan GitHub. Tampilkan webcam wajah presenter secara dominan.
 * **Aksi Pembicara**: Tatap kamera dengan sikap ramah, penuh percaya diri, dan profesional.
 * **Narasi Suara**:
-  > *"Bapak Yudhistira Arie Wijaya dan rekan-rekan sekalian,  
+  > *"Bapak Yudhistira Arie Wijaya, M. Kom. dan rekan-rekan sekalian,  
   > Dari serangkaian presentasi dan demonstrasi tadi, dapat disimpulkan bahwa proyek **Smart Exam** telah berhasil memenuhi seluruh capaian pembelajaran kurikulum Outcome-Based Education (OBE): mulai dari analisis kebutuhan PRD berstandar IEEE 830, pemodelan 4 diagram UML Versi 2.0 yang komprehensif, arsitektur Clean MVC berbasis prinsip SOLID, pengawasan Dual Camera AI, hingga integrasi CI/CD otomatis berstatus passing.  
   > 
   > Saya mengucapkan terima kasih yang sebesar-besarnya kepada Bapak Dosen Pengampu atas seluruh bimbingan dan arahannya sepanjang semester ini.  

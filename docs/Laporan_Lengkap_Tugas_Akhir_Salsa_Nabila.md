@@ -24,7 +24,7 @@
 <br>
 
 **Dosen Pengampu:**  
-**Yudhistira Arie Wijaya, M.Kom., CDS.**  
+**Yudhistira Arie Wijaya, M. Kom.**  
 
 <br>
 
@@ -55,7 +55,7 @@ Mengetahui dan Mengesahkan,
 
 <br><br><br>
 
-**Yudhistira Arie Wijaya, M.Kom., CDS.**  
+**Yudhistira Arie Wijaya, M. Kom.**  
 NIDN: 0424078401  
 
 ---
@@ -90,7 +90,7 @@ Puji dan syukur ke hadirat Allah Subhanahu Wa Ta'ala atas limpahan rahmat, taufi
 Laporan ini disusun sebagai pemenuhan beban kurikulum berbasis capaian pembelajaran *Outcome-Based Education (OBE)* pada Semester 3 Program Studi S1 Teknik Informatika STMIK IKMI Cirebon. Proyek ini memadukan prinsip-prinsip rekayasa perangkat lunak modern, arsitektur Clean MVC berbasis SOLID, teknologi pengawasan ganda (*Dual-Camera Proctoring*) via WebRTC, komputasi *vision AI* di sisi klien menggunakan MediaPipe Face Mesh, serta asisten operasional cerdas (*Google Gemini Live Database Grounding*).
 
 Penulis menyampaikan penghargaan dan ucapan terima kasih yang tulus kepada:
-1. **Bapak Yudhistira Arie Wijaya, M.Kom., CDS.**, selaku Dosen Pengampu mata kuliah Rekayasa Perangkat Lunak, atas bimbingan teknis, arahan metodologis, dan standar penilaian OBE yang membangun pemikiran rekayasa sistem secara holistik.
+1. **Bapak Yudhistira Arie Wijaya, M. Kom.**, selaku Dosen Pengampu mata kuliah Rekayasa Perangkat Lunak, atas bimbingan teknis, arahan metodologis, dan standar penilaian OBE yang membangun pemikiran rekayasa sistem secara holistik.
 2. Pimpinan dan segenap Dosen Program Studi S1 Teknik Informatika STMIK IKMI Cirebon yang telah memberikan bekal landasan keilmuan informatika.
 3. Rekan-rekan anggota Kelompok **"Tiba Tiba Talun"** atas diskusi, kolaborasi, dan saling bertukar gagasan seputar inovasi *E-Learning & Smart Education AI*.
 4. Kedua orang tua dan keluarga tercinta yang senantiasa memberikan doa, dukungan moril, dan materiil dalam penyelesaian perkuliahan ini.

@@ -2,7 +2,7 @@
 ## Smart Exam — Sistem Ujian Online Berbasis AI & Dual Camera Proctoring
 
 > **Mata Kuliah**: Rekayasa Perangkat Lunak (TIKB2503021) — 4 SKS  
-> **Dosen Pengampu**: Yudhistira Arie Wijaya, M.Kom., CDS.  
+> **Dosen Pengampu**: Yudhistira Arie Wijaya, M. Kom.  
 > **Institusi**: S1 Teknik Informatika — STMIK IKMI Cirebon  
 > **Tahun Akademik**: 2026/2027 (Semester 3)  
 > **Penyusun**: **Salsa Nabila** (NIM: **41257158**)  

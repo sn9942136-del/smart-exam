@@ -22,7 +22,7 @@
 | **Program Studi** | S1 Teknik Informatika |
 | **Perguruan Tinggi** | STMIK IKMI Cirebon |
 | **Mata Kuliah / SKS** | Rekayasa Perangkat Lunak (TIKB2503021) / 4 SKS (2 Teori + 2 Praktik) |
-| **Dosen Pengampu** | **Yudhistira Arie Wijaya, M.Kom.** |
+| **Dosen Pengampu** | **Yudhistira Arie Wijaya, M. Kom.** |
 | **Nama Kelompok** | **Tiba Tiba Talun** |
 | **Tema Topik Kelompok** | **E-Learning & Smart Education AI** |
 | **Judul Proyek Mandiri** | **Smart Exam: Sistem Ujian Online Berbasis Web dengan Pengawasan Dual Camera AI dan Chatbot Operasional Terintegrasi Database** |

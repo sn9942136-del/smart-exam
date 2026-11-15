@@ -4,7 +4,7 @@
 > **Penyusun**: **Salsa Nabila** (NIM: **41257158**)  
 > **Kelompok**: **Tiba Tiba Talun**  
 > **Tema Topik**: **E-Learning & Smart Education AI**  
-> **Dosen Pengampu**: **Yudhistira Arie Wijaya, M.Kom., CDS.**  
+> **Dosen Pengampu**: **Yudhistira Arie Wijaya, M. Kom.**  
 > **Mata Kuliah**: Rekayasa Perangkat Lunak (TIKB2503021) — STMIK IKMI Cirebon
 
 ---
@@ -23,7 +23,7 @@
 
 ### Timeline Presentasi:
 * **Menit 00:00 – 01:00 | Pembukaan & Identitas Diri**
-  > *"Assalamu’alaikum Warahmatullahi Wabarakatuh. Selamat pagi/siang kepada Bapak Dosen Pengampu, Bapak Yudhistira Arie Wijaya, M.Kom., CDS., dan rekan-rekan semuanya. Perkenalkan, saya Salsa Nabila dengan NIM 41257158, perwakilan dari kelompok 'Tiba Tiba Talun'. Pada kesempatan kali ini, saya akan mempresentasikan progres pertama tugas proyek akhir mata kuliah Rekayasa Perangkat Lunak dengan topik E-Learning & Smart Education AI, yang berjudul 'Smart Exam: Sistem Ujian Online Berbasis Web dengan Pengawasan Dual Camera AI dan Chatbot Operasional Terintegrasi Database'."*
+  > *"Assalamu’alaikum Warahmatullahi Wabarakatuh. Selamat pagi/siang kepada Bapak Dosen Pengampu, Bapak Yudhistira Arie Wijaya, M. Kom., dan rekan-rekan semuanya. Perkenalkan, saya Salsa Nabila dengan NIM 41257158, perwakilan dari kelompok 'Tiba Tiba Talun'. Pada kesempatan kali ini, saya akan mempresentasikan progres pertama tugas proyek akhir mata kuliah Rekayasa Perangkat Lunak dengan topik E-Learning & Smart Education AI, yang berjudul 'Smart Exam: Sistem Ujian Online Berbasis Web dengan Pengawasan Dual Camera AI dan Chatbot Operasional Terintegrasi Database'."*
 
 * **Menit 01:00 – 02:30 | Latar Belakang & Identifikasi Masalah**
   > *"Latar belakang proyek ini berakar dari maraknya kecurangan akademik pada ujian daring konvensional. Kamera laptop tunggal memiliki blind spot yang luas di sisi samping meja peserta. Melalui Smart Exam, kami merumuskan solusi berbasis rekayasa perangkat lunak dengan pendekatan Dual Camera Proctoring dan AI Face Mesh di sisi browser, serta asisten operasional cerdas."*
@@ -67,14 +67,14 @@
 
 | Menit | Segmen / Topik | Panduan Tindakan di Layar (*Screen Action*) |
 | :--- | :--- | :--- |
-| **00:00 – 01:30** | **Pembukaan & Identitas Resmi** | Tampilkan slide judul / profil GitHub `sn9942136-del/smart-exam`. Wajah webcam aktif di sudut. Sebutkan nama **Salsa Nabila**, NIM **41257158**, Dosen **Yudhistira Arie Wijaya, M.Kom., CDS.**, STMIK IKMI Cirebon. |
+| **00:00 – 01:30** | **Pembukaan & Identitas Resmi** | Tampilkan slide judul / profil GitHub `sn9942136-del/smart-exam`. Wajah webcam aktif di sudut. Sebutkan nama **Salsa Nabila**, NIM **41257158**, Dosen **Yudhistira Arie Wijaya, M. Kom.**, STMIK IKMI Cirebon. |
 | **01:30 – 03:00** | **Demo Autentikasi & Verifikasi OTP Multi-Kanal** | Buka halaman login (`/login`). Masukkan akun. Tunjukkan layar verifikasi OTP 6-digit. Jelaskan bahwa kode dikirim via Email SMTP Gmail / WhatsApp Gateway dan input manual oleh user demi keamanan. Klik verifikasi dan masuk ke Dashboard. |
 | **03:00 – 05:00** | **Demo Fitur Unggulan 1: Dual Camera Proctoring & AI Face Mesh** | Masuk sebagai Siswa, pilih paket ujian aktif, masukkan token. Tunjukkan preview **Kamera Depan** (laptop) dan **Kamera Sekunder** (HP/kamera meja). Mulai ujian. Coba menoleh ke samping atau tutup wajah sebentar: tunjukkan indikator peringatan AI Face Mesh yang langsung muncul di layar dan tercatat di telemetri server. |
 | **05:00 – 06:30** | **Demo Fitur Pengerjaan Ujian & Auto-Save Asinkron** | Jawab beberapa soal pilihan ganda dan esai. Tunjukkan bahwa jawaban tersimpan otomatis (*auto-save*) tanpa reload halaman, dan timer waktu ujian dikendalikan oleh server (*Server-Authoritative Timer*). |
 | **06:30 – 08:00** | **Demo Fitur Unggulan 2: Chatbot AI Operasional Live Database** | Pindah ke Dashboard Admin/Guru. Buka widget Chatbot Asisten di pojok kanan bawah. Ketik pertanyaan: *"Berapa jumlah bank soal dan paket ujian yang aktif saat ini?"*. Tunjukkan chatbot menjawab secara instan, singkat, padat, dan akurat (contoh: 10 bank soal dan 10 paket ujian) berdasarkan data riil dari database MySQL. Tunjukkan juga menu pengaturan model AI (Gemini 3.5 Flash-Lite / 3.8 Flash) dan konfigurasi API Key. |
 | **08:00 – 09:30** | **Demo Dashboard Monitoring & Koreksi Esai Cerdas** | Tunjukkan panel pemantauan pengawas live, log insiden kecurangan yang tadi terekam, serta fitur koreksi esai otomatis yang memberikan rekomendasi nilai berdasarkan rubrik. |
 | **09:30 – 10:45** | **Bukti Pengujian & CI/CD GitHub Actions** | Buka terminal dan jalankan `php tests/run_tests.php` atau tunjukkan 8 test suite lulus 100%. Buka browser di tab repositori GitHub `sn9942136-del/smart-exam` -> menu **Actions**. Tunjukkan pipeline CI workflow status hijau (*passing*) dengan badge aktif di README.md. |
-| **10:45 – 12:00** | **Kesimpulan & Penutup** | Rangkum capaian proyek: berhasil mengintegrasikan Dual Camera WebRTC, AI Face Tracking, dan Live Database Chatbot ke dalam Clean MVC yang aman dan teruji. Sampaikan terima kasih kepada Dosen Pengampu Pak Yudhistira Arie Wijaya. Salam penutup. |
+| **10:45 – 12:00** | **Kesimpulan & Penutup** | Rangkum capaian proyek: berhasil mengintegrasikan Dual Camera WebRTC, AI Face Tracking, dan Live Database Chatbot ke dalam Clean MVC yang aman dan teruji. Sampaikan terima kasih kepada Dosen Pengampu Pak Yudhistira Arie Wijaya, M. Kom. Salam penutup. |
 
 ---
 
